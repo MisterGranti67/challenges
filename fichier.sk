@@ -1,0 +1,760 @@
+########################
+# Code par MrBaguette07#
+########################
+# Attention : 
+# - "" -> Prefix
+# - Créé pour Skylord
+
+on load:
+    send "&6&lDEV &7» &b&lLe skript &2&lquete - fichier.sk &b&l a bien démarré" to console
+    
+options:
+    >>: »
+    p: &f &7»
+
+on load:
+    set {quete_listepalier::début::1} to "I"
+    set {quete_listepalier::début::2} to "VI"
+    set {quete_listepalier::début::3} to "XI"
+    delete {quete_listepalier::début::4}
+    delete {quete_listepalier::début::5}  
+    delete {quete_listepalier::début::6} 
+
+    set {quete_listepalier::fin::1} to "V"
+    set {quete_listepalier::fin::2} to "X"
+    set {quete_listepalier::fin::3} to "XIII"
+    delete {quete_listepalier::fin::4}
+    delete {quete_listepalier::fin::5}  
+    delete {quete_listepalier::fin::6} 
+
+
+    set {quete_listepalier::liste::*} to "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII" 
+
+
+
+
+
+# PALIER 1 : 
+
+    set {quete_lore::lore::I1::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7créer une île.", " ", "&7&nAstuce {@>>}", "&7➞ Pour créer une île%nl%  &7• &f/is create &e[Nom de votre île]"
+    set {quete_lore::recompense::I1::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::I1::*} to "Ile" 
+    set {quete_lore::besoin::I1::*} to 1
+    
+    set {quete_lore::lore::I2::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir 64 blocs de cobblestone", "&7dans votre inventaire&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir de la pierre taillé, faites&7%nl%  &e/mine &7ou &eminez à votre générateur"
+    set {quete_lore::recompense::I2::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::I2::*} to "Cobblestones" 
+    set {quete_lore::besoin::I2::*} to 64
+
+    set {quete_lore::lore::I3::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir une épée, une hache, une pioche,%nl%&7une pelle et une houe en pierre%nl%&7dans votre inventaire.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir de la cobblestone, faites&7%nl%  &7• &e/mine &7ou &eminez à votre générateur" and "&7➞ Pour obtenir du bois, vous pouvez miner%nl%  &7les arbres au &e/spawn&7."
+    set {quete_lore::recompense::I3::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::I3::*} to "Hache=en=Pierre", "Pelle=en=Pierre", "Pioche=en=Pierre", "Epée=en=Pierre", "Houe=en=Pierre"
+    set {quete_lore::besoin::I3::*} to 1
+
+    set {quete_lore::lore::I4::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7tuer &e10 poulets&7, &ecochons&7, &evaches%nl%&7et &emoutons&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir des animaux, rendez-vous&7%nl%  &7dans la dimension d'&dAlfea&7%nl%  &7en passant par le portail situé au &e/spawn"
+    set {quete_lore::recompense::I4::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::I4::*} to "Moutons", "Cochons", "Vaches", "Poules"
+    set {quete_lore::besoin::I4::*} to 10 
+
+    set {quete_lore::lore::I5::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir une île de niveau &e25&7.", " ", "&7&nAstuce {@>>}", "&7➞ Pour calculer le niveau de votre île faites%nl%  &7• &f/is level" and "&7➞ Pour augmenter le niveau de votre île%nl%  &7vous devez poser des blocs sur votre île" 
+    set {quete_lore::recompense::I5::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::I5::*} to "ïle=Level"
+    set {quete_lore::besoin::I5::*} to 25
+
+    set {quete_lore::lore::I6::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir une armure en diamant complète", "&7dans votre inventaire&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir des diamants, faites&7%nl%  &7• &e/mine &7ou &eminez à votre générateur" and "&7➞ Pour obtenir du bois, vous pouvez miner%nl%  &7les arbres au &e/spawn&7."
+    set {quete_lore::recompense::I6::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::I6::*} to "Casque=en=Diamant", "Plastron=en=Diamant", "Pantalon=en=Diamant", "Chaussure=en=Diamant"
+    set {quete_lore::besoin::I6::*} to 1
+
+    set {quete_lore::lore::I7::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir &e15 Level d'xp&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir de l'exp grâce aux minerais, faites&7%nl%  &7• &e/mine &7ou &eminez à votre générateur" and "&7➞ Pour obtenir de l'exp grâce aux donjons, faites%nl%  &7• &e/donjon&7."
+    set {quete_lore::recompense::I7::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::I7::*} to "Level"
+    set {quete_lore::besoin::I7::*} to 15
+
+    set {quete_lore::lore::I8::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7Obtenir &e5 levels jobs&7 sur chacun des métiers.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour visualiser vos métiers, faites&7%nl%  &7• &e/jobs"
+    set {quete_lore::recompense::I8::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::I8::*} to "Jobs=Bûcheron", "Jobs=Pêcheur", "Jobs=Aventurier", "Jobs=Architecte", "Jobs=Chasseur", "Jobs=Fermier", "Jobs=Mineur"
+    set {quete_lore::besoin::I8::*} to 5 
+    
+    set {quete_lore::lore::I9::*} to " ", "&7Pour complêter ce challenge, vous devez", "&evotez 2 fois&7 pour le serveur", " ", "&7&nAstuce {@>>}" and "&7➞ faites &e/vote &7pour accéder au site de vote"
+    set {quete_lore::recompense::I9::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::I9::*} to "Total=votes"
+    set {quete_lore::besoin::I9::*} to 2
+
+    set {quete_lore::lore::I10::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir passé &e2 heures connecté&7 sur le serveur."
+    set {quete_lore::recompense::I10::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::I10::*} to "Temps=de=jeu"
+    set {quete_lore::besoin::I10::*} to 2 
+
+
+
+
+
+# PALIER 2 :
+
+    set {quete_lore::lore::II1::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir &eune épée&7, &eune hache&7, &eune pioche&7,%nl%&7&eune pelle &7et &eune houe en diamants%nl%&7dans votre inventaire.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir des diamants, faites&7%nl%  &7• &e/mine &7ou &eminez à votre générateur" and "&7➞ Pour obtenir du bois, vous pouvez miner%nl%  &7les arbres au &e/spawn&7."
+    set {quete_lore::recompense::II1::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::II1::*} to "Epée=en=Diamant","Pelle=en=Diamant","Pioche=en=Diamant","Hâche=en=Diamant","Houe=en=Diamant"
+    set {quete_lore::besoin::II1::*} to 1 
+    
+    set {quete_lore::lore::II2::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir &e64 blocs de terre", "&7dans votre inventaire&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir de la terre, faites&7%nl%  &7• &e/shop &7ou &eLe cube magique au /boutique"
+    set {quete_lore::recompense::II2::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::II2::*} to "Terres"
+    set {quete_lore::besoin::II2::*} to 64
+
+    set {quete_lore::lore::II3::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7récolter &e32 Patates&7, &ecarottes&7, &ebetteraves,%nl%&ecitrouilles&7, &epastèques&7 et &eBlés.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir des cultures, faites&7%nl%  &7• &e/shop"
+    set {quete_lore::recompense::II3::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::II3::*} to "Pommes=de=terre","Carottes","Betteraves","Citrouilles","Pastèques","Blés"
+    set {quete_lore::besoin::II3::*} to 32
+
+    set {quete_lore::lore::II4::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir &e1 Etherium&7.", " ", "&7&nAstuce {@>>}", "&7➞ Pour obtenir des Ethérium (ETH), faites%nl%  &7• &f/crypto"
+    set {quete_lore::recompense::II4::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::II4::*} to "Etherium"
+    set {quete_lore::besoin::II4::*} to 1
+
+    set {quete_lore::lore::II5::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7tuer 20 monstres&7.", " ", "&7&nAstuce {@>>}", "&7➞ Vous pouvez faire /donjon pour trouver des monstres à tuer." 
+    set {quete_lore::recompense::II5::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::II5::*} to "Morts"
+    set {quete_lore::besoin::II5::*} to 20
+
+    set {quete_lore::lore::II6::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir une île de niveau &e50&7.", " ", "&7&nAstuce {@>>}", "&7➞ Pour calculer le niveau de votre île faites%nl%  &7• &f/is level" and "&7➞ Pour augmenter le niveau de votre île%nl%  &7vous devez poser des blocs sur votre île" 
+    set {quete_lore::recompense::II6::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::II6::*} to "ïle=Level"
+    set {quete_lore::besoin::II6::*} to 50
+
+    set {quete_lore::lore::II7::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir &e20 Level d'xp&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir de l'exp grâce aux minerais, faites&7%nl%  &7• &e/mine &7ou &eminez à votre générateur" and "&7➞ Pour obtenir de l'exp grâce aux donjons, faites%nl%  &7• &e/donjon&7."
+    set {quete_lore::recompense::II7::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::II7::*} to "Level"
+    set {quete_lore::besoin::II7::*} to 20
+
+    set {quete_lore::lore::II8::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7Obtenir &e10 levels jobs&7 sur chacun des métiers.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour visualiser vos métiers, faites&7%nl%  &7• &e/jobs."
+    set {quete_lore::recompense::II8::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::II8::*} to "Jobs=Bûcheron", "Jobs=Pêcheur", "Jobs=Aventurier", "Jobs=Architecte", "Jobs=Chasseur", "Jobs=Fermier", "Jobs=Mineur"
+    set {quete_lore::besoin::II8::*} to 10
+
+    set {quete_lore::lore::II9::*} to " ", "&7Pour complêter ce challenge, vous devez", "&eavoir 10 000$ &7 sur votre compte", " ", "&7&nAstuce {@>>}" and "&7➞ faites &e/shop &7pour vendre vos resources."
+    set {quete_lore::recompense::II9::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::II9::*} to "Money"
+    set {quete_lore::besoin::II9::*} to 10000
+
+    set {quete_lore::lore::II10::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir passé &e3 heures connecté&7 sur le serveur."
+    set {quete_lore::recompense::II10::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::II10::*} to "Temps=de=jeu"
+    set {quete_lore::besoin::II10::*} to 3
+
+
+
+
+
+# PALIER 3 : 
+
+    set {quete_lore::lore::III1::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7crafter &e3 épées en diamants&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir des diamants, faites&7%nl%  &7• &e/mine &7ou &eminez à votre générateur" and "&7➞ Pour obtenir du bois, vous pouvez miner%nl%  &7les arbres au &e/spawn&7."
+    set {quete_lore::recompense::III1::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::III1::*} to "Epée=en=Diamant"
+    set {quete_lore::besoin::III1::*} to 3
+    
+    set {quete_lore::lore::III2::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7casser &e1000 blocs de cobblestone&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir de la cobblestone, faites&7%nl%  &7• &e/mine &7ou &eminez à votre générateur"
+    set {quete_lore::recompense::III2::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::III2::*} to "Cobblestones"
+    set {quete_lore::besoin::III2::*} to 1000
+
+    set {quete_lore::lore::III3::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7placer &e1000 blocs de terre&7.", " ", "&7&nAstuce {@>>}", "&7➞ Pour obtenir de la terre, faites&7%nl%  &7• &e/shop &7ou &eLe cube magique au /boutique"
+    set {quete_lore::recompense::III3::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::III3::*} to "Terres"
+    set {quete_lore::besoin::III3::*} to 1000
+
+    set {quete_lore::lore::III4::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir &e1 Bitcoin&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir des Bitcoins (BTC), faites%nl%  &7• &f/crypto"
+    set {quete_lore::recompense::III4::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::III4::*} to "Bitcoin"
+    set {quete_lore::besoin::III4::*} to 1
+
+    set {quete_lore::lore::III5::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7tuer &e50 squelettes&7.", " ", "&7&nAstuce {@>>}", "&7➞ Vous pouvez faire /donjon pour trouver des squelettes à tuer." 
+    set {quete_lore::recompense::III5::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::III5::*} to "Morts"
+    set {quete_lore::besoin::III5::*} to 50
+
+    set {quete_lore::lore::III6::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir une île de niveau &e100&7.", " ", "&7&nAstuce {@>>}", "&7➞ Pour calculer le niveau de votre île faites%nl%  &7• &f/is level" and "&7➞ Pour augmenter le niveau de votre île%nl%  &7vous devez poser des blocs sur votre île" 
+    set {quete_lore::recompense::III6::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::III6::*} to "ïle=Level"
+    set {quete_lore::besoin::III6::*} to 100
+
+    set {quete_lore::lore::III7::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir &e30 Level d'xp&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir de l'exp grâce aux minerais, faites&7%nl%  &7• &e/mine &7ou &eminez à votre générateur" and "&7➞ Pour obtenir de l'exp grâce aux donjons, faites%nl%  &7• &e/donjon&7."
+    set {quete_lore::recompense::III7::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::III7::*} to "Level"
+    set {quete_lore::besoin::III7::*} to 30
+
+    set {quete_lore::lore::III8::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7Obtenir &e15 levels jobs&7 sur chacun des métiers.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour visualiser vos métiers, faites&7%nl%  &7• &e/jobs."
+    set {quete_lore::recompense::III8::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::III8::*} to "Jobs=Bûcheron", "Jobs=Pêcheur", "Jobs=Aventurier", "Jobs=Architecte", "Jobs=Chasseur", "Jobs=Fermier", "Jobs=Mineur"
+    set {quete_lore::besoin::III8::*} to 15
+
+    set {quete_lore::lore::III9::*} to " ", "&7Pour complêter ce challenge, vous devez", "&eavoir 20 000$ &7 sur votre compte", " ", "&7&nAstuce {@>>}" and "&7➞ faites &e/shop &7pour vendre vos resources."
+    set {quete_lore::recompense::III9::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::III9::*} to "Money"
+    set {quete_lore::besoin::III9::*} to 20000
+
+    set {quete_lore::lore::III10::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir passé &e12 heures connecté&7 sur le serveur."
+    set {quete_lore::recompense::III10::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::III10::*} to "Temps=de=jeu"
+    set {quete_lore::besoin::III10::*} to 12
+
+
+
+
+
+# PALIER 4 : 
+
+    set {quete_lore::lore::IV1::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7apprivoiser &e25 animaux&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour apprivoiser facilement des animaux, allez à &d&lAlféa&7%nl%  &7• &e/spawn -> portail à droite"
+    set {quete_lore::recompense::IV1::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::IV1::*} to "Apprivoiser"
+    set {quete_lore::besoin::IV1::*} to 25
+    
+    set {quete_lore::lore::IV2::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7concevoir &e50 potions&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour avoir un alambic, faites&7%nl%  &7• &e/shop"
+    set {quete_lore::recompense::IV2::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::IV2::*} to "Potions"
+    set {quete_lore::besoin::IV2::*} to 50
+
+    set {quete_lore::lore::IV3::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7prendre &e150 seaux de lait d'une vache&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour trouver des vaches, allez à &d&lAlféa&7%nl%  &7• &e/spawn -> portail à droite"
+    set {quete_lore::recompense::IV3::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::IV3::*} to "Seaux=de=lait"
+    set {quete_lore::besoin::IV3::*} to 150
+
+    set {quete_lore::lore::IV4::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7&lmanger &e&l16 Pommes dorées&7&l.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour avoir de l'or, faites%nl%  &7• &f/mine"
+    set {quete_lore::recompense::IV4::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::IV4::*} to "Pommes=en=or"
+    set {quete_lore::besoin::IV4::*} to 16
+    
+    set {quete_lore::lore::IV5::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7infliger &e1 000 points de dégats&7.", " ", "&7&nAstuce {@>>}", "&7➞ Vous pouvez faire &e/donjon &7pour trouver des mobs à tuer." 
+    set {quete_lore::recompense::IV5::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::IV5::*} to "Dégâts"
+    set {quete_lore::besoin::IV5::*} to 1000
+
+    set {quete_lore::lore::IV6::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir une île de niveau &e500&7.", " ", "&7&nAstuce {@>>}", "&7➞ Pour calculer le niveau de votre île faites%nl%  &7• &f/is level" and "&7➞ Pour augmenter le niveau de votre île%nl%  &7vous devez poser des blocs sur votre île" 
+    set {quete_lore::recompense::IV6::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::IV6::*} to "ïle=Level"
+    set {quete_lore::besoin::IV6::*} to 500
+
+    set {quete_lore::lore::IV7::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir &e50 Level d'xp&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir de l'exp grâce aux minerais, faites&7%nl%  &7• &e/mine &7ou &eminez à votre générateur" and "&7➞ Pour obtenir de l'exp grâce aux donjons, faites%nl%  &7• &e/donjon&7."
+    set {quete_lore::recompense::IV7::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::IV7::*} to "Level"
+    set {quete_lore::besoin::IV7::*} to 50
+
+    set {quete_lore::lore::IV8::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7Obtenir &e20 levels jobs&7 sur chacun des métiers.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour visualiser vos métiers, faites&7%nl%  &7• &e/jobs."
+    set {quete_lore::recompense::IV8::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::IV8::*} to "Jobs=Bûcheron", "Jobs=Pêcheur", "Jobs=Aventurier", "Jobs=Architecte", "Jobs=Chasseur", "Jobs=Fermier", "Jobs=Mineur"
+    set {quete_lore::besoin::IV8::*} to 20
+
+    set {quete_lore::lore::IV9::*} to " ", "&7Pour complêter ce challenge, vous devez", "&eavoir 50 000$ &7 sur votre compte", " ", "&7&nAstuce {@>>}" and "&7➞ faites &e/shop &7pour vendre vos resources."
+    set {quete_lore::recompense::IV9::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::IV9::*} to "Money"
+    set {quete_lore::besoin::IV9::*} to 50000
+
+    set {quete_lore::lore::IV10::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir passé &e1 jour connecté&7 sur le serveur."
+    set {quete_lore::recompense::IV10::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::IV10::*} to "Temps=de=jeu"
+    set {quete_lore::besoin::IV10::*} to 1
+
+
+
+
+
+# PALIER 5 : 
+
+    set {quete_lore::lore::V1::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7enchanter &e50 outils&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour avoir une table d'enchante, allez à &d&lAlféa&7%nl%  &7• &e/spawn -> portail à droite"
+    set {quete_lore::recompense::V1::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::V1::*} to "Enchantements"
+    set {quete_lore::besoin::V1::*} to 50
+    
+    set {quete_lore::lore::V2::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7tondre &e500 moutons&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour avoir des moutons facilement, allez à &d&lAlféa&7%nl%  &7• &e/spawn -> portail à droite"
+    set {quete_lore::recompense::V2::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::V2::*} to "Tontes"
+    set {quete_lore::besoin::V2::*} to 500
+
+    set {quete_lore::lore::V3::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7casser &e50 outils&7."
+    set {quete_lore::recompense::V3::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::V3::*} to "Cassés"
+    set {quete_lore::besoin::V3::*} to 50
+
+    set {quete_lore::lore::V4::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir &e4 balises&7 dans votre inventaire."
+    set {quete_lore::recompense::V4::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::V4::*} to "Balises"
+    set {quete_lore::besoin::V4::*} to 4
+
+    set {quete_lore::lore::V5::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7tuer &e20 joueurs&7.", " ", "&7&nAstuce {@>>}", "&7➞ Vous pouvez faire &e/pvp &7pour trouver des joueurs à tuer." 
+    set {quete_lore::recompense::V5::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::V5::*} to "Morts"
+    set {quete_lore::besoin::V5::*} to 20
+
+    set {quete_lore::lore::V6::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir une île de niveau &e5000&7.", " ", "&7&nAstuce {@>>}", "&7➞ Pour calculer le niveau de votre île faites%nl%  &7• &f/is level" and "&7➞ Pour augmenter le niveau de votre île%nl%  &7vous devez poser des blocs sur votre île" 
+    set {quete_lore::recompense::V6::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::V6::*} to "ïle=Level"
+    set {quete_lore::besoin::V6::*} to 5000
+
+    set {quete_lore::lore::V7::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir &e100 Level d'xp&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir de l'exp grâce aux minerais, faites&7%nl%  &7• &e/mine &7ou &eminez à votre générateur" and "&7➞ Pour obtenir de l'exp grâce aux donjons, faites%nl%  &7• &e/donjon&7."
+    set {quete_lore::recompense::V7::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::V7::*} to "Level"
+    set {quete_lore::besoin::V7::*} to 100
+
+    set {quete_lore::lore::V8::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7Obtenir &e30 levels jobs&7 sur chacun des métiers.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour visualiser vos métiers, faites&7%nl%  &7• &e/jobs."
+    set {quete_lore::recompense::V8::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::V8::*} to "Jobs=Bûcheron", "Jobs=Pêcheur", "Jobs=Aventurier", "Jobs=Architecte", "Jobs=Chasseur", "Jobs=Fermier", "Jobs=Mineur"
+    set {quete_lore::besoin::V8::*} to 30
+    
+    set {quete_lore::lore::V9::*} to " ", "&7Pour complêter ce challenge, vous devez", "&eavoir 100 000$ &7 sur votre compte", " ", "&7&nAstuce {@>>}" and "&7➞ faites &e/shop &7pour vendre vos resources."
+    set {quete_lore::recompense::V9::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::V9::*} to "Money"
+    set {quete_lore::besoin::V9::*} to 100000
+
+    set {quete_lore::lore::V10::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir passé &e3 jours connecté&7 sur le serveur."
+    set {quete_lore::recompense::V10::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::V10::*} to "Temps=de=jeu"
+    set {quete_lore::besoin::V10::*} to 3
+
+
+
+
+
+#PALIER 6 :
+
+    set {quete_lore::lore::VI1::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7casser &e150 Obsidian&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir de l'obsidian, faites&7%nl%  &7• &e/mine -> Mine Nether"
+    set {quete_lore::recompense::VI1::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::VI1::*} to "Obsidienne"
+    set {quete_lore::besoin::VI1::*} to 150
+    
+    set {quete_lore::lore::VI2::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7récolter &e256 stacks&7 de &ePatates&7, &eCarottes&7, &eBetteraves&7," and "&ecitrouilles&7, &epastèques&7 et &eBlés&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir des cultures, faites&7%nl%  &7• &e/shop"
+    set {quete_lore::recompense::VI2::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::VI2::*} to "Pommes=de=terre","Carottes","Betteraves","Citrouilles","Pastèques","Blés"
+    set {quete_lore::besoin::VI2::*} to 16384
+
+    set {quete_lore::lore::VI3::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir &e1 Gateau&7, &e1 torche&7," and " &e1 Poppy&7, &e1 Panneau en bois de chêne&7."
+    set {quete_lore::recompense::VI3::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::VI3::*} to "Gâteau","Torche","Coquelicot","Panneau"
+    set {quete_lore::besoin::VI3::*} to 1
+
+    set {quete_lore::lore::VI4::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7consommer &e150 Boissons&7 au bar du &e/spawn&7."
+    set {quete_lore::recompense::VI4::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::VI4::*} to "Consommation"
+    set {quete_lore::besoin::VI4::*} to 150
+
+    set {quete_lore::lore::VI5::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7parcourir &e10 000 blocs &7en marchant.", " ", "&7&nAstuce {@>>}", "&7➞ &cATTENTION&7, en marchant pas en sprintant" 
+    set {quete_lore::recompense::VI5::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::VI5::*} to "Blocs"
+    set {quete_lore::besoin::VI5::*} to 10000
+
+    set {quete_lore::lore::VI6::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir une île de niveau &e10 000&7.", " ", "&7&nAstuce {@>>}", "&7➞ Pour calculer le niveau de votre île faites%nl%  &7• &f/is level" and "&7➞ Pour augmenter le niveau de votre île%nl%  &7vous devez poser des blocs sur votre île" 
+    set {quete_lore::recompense::VI6::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::VI6::*} to "ïle=Level"
+    set {quete_lore::besoin::VI6::*} to 10000
+
+    set {quete_lore::lore::VI7::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir &e125 Level d'xp&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir de l'exp grâce aux minerais, faites&7%nl%  &7• &e/mine &7ou &eminez à votre générateur" and "&7➞ Pour obtenir de l'exp grâce aux donjons, faites%nl%  &7• &e/donjon&7."
+    set {quete_lore::recompense::VI7::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::VI7::*} to "Level"
+    set {quete_lore::besoin::VI7::*} to 125
+
+    set {quete_lore::lore::VI8::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7Obtenir &e40 levels jobs&7 sur chacun des métiers.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour visualiser vos métiers, faites&7%nl%  &7• &e/jobs."
+    set {quete_lore::recompense::VI8::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::VI8::*} to "Jobs=Bûcheron", "Jobs=Pêcheur", "Jobs=Aventurier", "Jobs=Architecte", "Jobs=Chasseur", "Jobs=Fermier", "Jobs=Mineur"
+    set {quete_lore::besoin::VI8::*} to 40
+    
+    set {quete_lore::lore::VI9::*} to " ", "&7Pour complêter ce challenge, vous devez", "&eavoir 250 000$ &7 sur votre compte", " ", "&7&nAstuce {@>>}" and "&7➞ faites &e/shop &7pour vendre vos resources."
+    set {quete_lore::recompense::VI9::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::VI9::*} to "Money"
+    set {quete_lore::besoin::VI9::*} to 25000
+
+    set {quete_lore::lore::VI10::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir passé &e6 jours connecté&7 sur le serveur."
+    set {quete_lore::recompense::VI10::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::V10::*} to "Temps=de=jeu"
+    set {quete_lore::besoin::VI10::*} to 6
+
+
+
+
+
+#PALIER 7 :
+
+    set {quete_lore::lore::VII1::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7tuer &e10 &cRavageur de&8 Carabosse&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour trouver ces mobs, faites&7%nl%  &7• &e/donjons &7(Vous devez les affronter)"
+    set {quete_lore::recompense::VII1::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::VII1::*} to "Morts"
+    set {quete_lore::besoin::VII1::*} to 10
+
+    set {quete_lore::lore::VII2::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7reproduire &e3000 Animaux&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour avoir des moutons facilement, allez à &d&lAlféa&7%nl%  &7• &e/spawn -> portail à droite"
+    set {quete_lore::recompense::VII2::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::VII2::*} to "Reproduction"
+    set {quete_lore::besoin::VII2::*} to 3000
+
+    set {quete_lore::lore::VII3::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7crafter &e10 Balises&7."
+    set {quete_lore::recompense::VII3::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::VII3::*} to "Balises"
+    set {quete_lore::besoin::VII3::*} to 10
+    
+    set {quete_lore::lore::VII4::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7casser &e5000 Minerais (Diamants, émeraudes, Charbons, Fer, Lapis)&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir des minerais, faites&7%nl%  &7• &e/mine &7ou &eminez à votre générateur"
+    set {quete_lore::recompense::VII4::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::VII4::*} to "Charbon", "Fer", "Or", "Lapis", "Redstone", "Emeraude", "Diamant"
+    set {quete_lore::besoin::VII4::*} to 5000
+
+    set {quete_lore::lore::VII5::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir &e150 Etherium&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir des Ethérium (ETH), faites%nl%  &7• &f/crypto"
+    set {quete_lore::recompense::VII5::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::VII5::*} to "Etherium"
+    set {quete_lore::besoin::VII5::*} to 150
+
+    set {quete_lore::lore::VII6::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir une île de niveau &e15 000&7.", " ", "&7&nAstuce {@>>}", "&7➞ Pour calculer le niveau de votre île faites%nl%  &7• &f/is level" and "&7➞ Pour augmenter le niveau de votre île%nl%  &7vous devez poser des blocs sur votre île" 
+    set {quete_lore::recompense::VII6::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::VII6::*} to "ïle=Level"
+    set {quete_lore::besoin::VII6::*} to 15000
+
+    set {quete_lore::lore::VII7::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir &e170 Level d'xp&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir de l'exp grâce aux minerais, faites&7%nl%  &7• &e/mine &7ou &eminez à votre générateur" and "&7➞ Pour obtenir de l'exp grâce aux donjons, faites%nl%  &7• &e/donjon&7."
+    set {quete_lore::recompense::VII7::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::VII7::*} to "Level"
+    set {quete_lore::besoin::VII7::*} to 170
+
+    set {quete_lore::lore::VII8::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7Obtenir &e50 levels jobs&7 sur chacun des métiers.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour visualiser vos métiers, faites&7%nl%  &7• &e/jobs."
+    set {quete_lore::recompense::VII8::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::VII8::*} to "Jobs=Bûcheron", "Jobs=Pêcheur", "Jobs=Aventurier", "Jobs=Architecte", "Jobs=Chasseur", "Jobs=Fermier", "Jobs=Mineur"
+    set {quete_lore::besoin::VII8::*} to 50
+
+    set {quete_lore::lore::VII9::*} to " ", "&7Pour complêter ce challenge, vous devez", "&eavoir 650 000$ &7 sur votre compte", " ", "&7&nAstuce {@>>}" and "&7➞ faites &e/shop &7pour vendre vos resources."
+    set {quete_lore::recompense::VII9::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::VII9::*} to "Money"
+    set {quete_lore::besoin::VII9::*} to 650000
+
+    set {quete_lore::lore::VII10::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir passé &e9 jours connecté&7 sur le serveur."
+    set {quete_lore::recompense::VII10::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::VII10::*} to "Temps=de=jeu"
+    set {quete_lore::besoin::VII10::*} to 9
+
+
+
+
+
+#PALIER 8 :
+
+    set {quete_lore::lore::VIII1::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7tuer &e50 joueurs&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour tuer des joueur, faites&7%nl%  &7• &e/donjons &7(Vous devez les affronter)"
+    set {quete_lore::recompense::VIII1::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::VIII1::*} to "Morts"
+    set {quete_lore::besoin::VIII1::*} to 50
+    
+    set {quete_lore::lore::VIII2::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7obtenir &eune armure en netherite&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir de la netherite, faites&7%nl%  &7• &e/mine" and "" and "&cNe pas enchanter !"
+    set {quete_lore::recompense::VIII2::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::VIII2::*} to "Casque=en=Netherite", "Plastron=en=Netherite", "Plantation=en=Netherite", "Bottes=en=Netherite"
+    set {quete_lore::besoin::VIII2::*} to 1
+
+    set {quete_lore::lore::VIII3::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7infliger &e50 000 points de dégats&7.", " ", "&7&nAstuce {@>>}", "&7➞ Vous pouvez faire &e/donjon &7pour trouver des mobs à tuer." 
+    set {quete_lore::recompense::VIII3::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::VIII3::*} to "Dégâts"
+    set {quete_lore::besoin::VIII3::*} to 50000
+
+    set {quete_lore::lore::VIII4::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7tuer &e1000 Golems de fer&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour tuer des golems facilement, allez à &d&lAlféa&7%nl%  &7• &e/spawn -> portail à droite"
+    set {quete_lore::recompense::VIII4::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::VIII4::*} to "Morts"
+    set {quete_lore::besoin::VIII4::*} to 1000
+
+    set {quete_lore::lore::VIII5::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7placer &e120 000 pierres taillées&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir de la pierre faites &e/mine &7ou servez-vous de votre générateur."
+    set {quete_lore::recompense::VIII5::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::VIII5::*} to "Blocs"
+    set {quete_lore::besoin::VIII5::*} to 120000
+
+    set {quete_lore::lore::VIII6::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir une île de niveau &e25 000&7.", " ", "&7&nAstuce {@>>}", "&7➞ Pour calculer le niveau de votre île faites%nl%  &7• &f/is level" and "&7➞ Pour augmenter le niveau de votre île%nl%  &7vous devez poser des blocs sur votre île" 
+    set {quete_lore::recompense::VIII6::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::VIII6::*} to "ïle=Level"
+    set {quete_lore::besoin::VIII6::*} to 25000
+
+    set {quete_lore::lore::VIII7::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir &e200 Level d'xp&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir de l'exp grâce aux minerais, faites&7%nl%  &7• &e/mine &7ou &eminez à votre générateur" and "&7➞ Pour obtenir de l'exp grâce aux donjons, faites%nl%  &7• &e/donjon&7."
+    set {quete_lore::recompense::VIII7::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::VIII7::*} to "Level"
+    set {quete_lore::besoin::VIII7::*} to 200
+
+    set {quete_lore::lore::VIII8::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7Obtenir &e60 levels jobs&7 sur chacun des métiers.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour visualiser vos métiers, faites&7%nl%  &7• &e/jobs."
+    set {quete_lore::recompense::VIII8::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::VIII8::*} to "Jobs=Bûcheron", "Jobs=Pêcheur", "Jobs=Aventurier", "Jobs=Architecte", "Jobs=Chasseur", "Jobs=Fermier", "Jobs=Mineur"
+    set {quete_lore::besoin::VIII8::*} to 60
+
+    set {quete_lore::lore::VIII9::*} to " ", "&7Pour complêter ce challenge, vous devez", "&eavoir 1 400 000$ &7 sur votre compte", " ", "&7&nAstuce {@>>}" and "&7➞ faites &e/shop &7pour vendre vos resources."
+    set {quete_lore::recompense::VIII9::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::VIII9::*} to "Money"
+    set {quete_lore::besoin::VIII9::*} to 1400000
+
+    set {quete_lore::lore::VIII10::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir passé &e12 jours connecté&7 sur le serveur."
+    set {quete_lore::recompense::VIII10::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::VIII10::*} to "Temps=de=jeu"
+    set {quete_lore::besoin::VIII10::*} to 12
+
+
+
+
+
+#PALIER 9 :
+
+    set {quete_lore::lore::IX1::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7casser &e1500 obsidian&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir de l'obsidian, faites&7%nl%  &7• &e/mine &7ou servez-vous de votre générateur."
+    set {quete_lore::recompense::IX1::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::IX1::*} to "Obsidiennes"
+    set {quete_lore::besoin::IX1::*} to 1500
+    
+    set {quete_lore::lore::IX2::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7pêcher &e10 selles de cheval&7."
+    set {quete_lore::recompense::IX2::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::IX2::*} to "Selles"
+    set {quete_lore::besoin::IX2::*} to 10
+    
+    set {quete_lore::lore::IX3::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7pêcher &e10 pufferfish&7."
+    set {quete_lore::recompense::IX3::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::IX3::*} to "Poissons"
+    set {quete_lore::besoin::IX3::*} to 150
+    
+    set {quete_lore::lore::IX4::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7parcourir &e1 000 000 blocs &7en marchant.", " ", "&7&nAstuce {@>>}", "&7➞ &cATTENTION&7, en marchant pas en sprintant" 
+    set {quete_lore::recompense::IX4::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::IX4::*} to "Blocs"
+    set {quete_lore::besoin::IX4::*} to 1000000
+    
+    set {quete_lore::lore::IX5::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir &e2000 stacks de cactus &7.", " ", "&7&nAstuce {@>>}", "&7➞ &7Construisez une farm à cactus" 
+    set {quete_lore::recompense::IX5::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::IX5::*} to "Cactus"
+    set {quete_lore::besoin::IX5::*} to 2000
+    
+    set {quete_lore::lore::IX6::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir une île de niveau &e50 000&7.", " ", "&7&nAstuce {@>>}", "&7➞ Pour calculer le niveau de votre île faites%nl%  &7• &f/is level" and "&7➞ Pour augmenter le niveau de votre île%nl%  &7vous devez poser des blocs sur votre île" 
+    set {quete_lore::recompense::IX6::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::IX6::*} to "ïle=Level"
+    set {quete_lore::besoin::IX6::*} to 50000
+    
+    set {quete_lore::lore::IX7::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir &e250 Level d'xp&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir de l'exp grâce aux minerais, faites&7%nl%  &7• &e/mine &7ou &eminez à votre générateur" and "&7➞ Pour obtenir de l'exp grâce aux donjons, faites%nl%  &7• &e/donjon&7."
+    set {quete_lore::recompense::IX7::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::IX7::*} to "Level"
+    set {quete_lore::besoin::IX7::*} to 250
+
+    set {quete_lore::lore::IX8::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7Obtenir &e70 levels jobs&7 sur chacun des métiers.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour visualiser vos métiers, faites&7%nl%  &7• &e/jobs."
+    set {quete_lore::recompense::IX8::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::IX8::*} to "Jobs=Bûcheron", "Jobs=Pêcheur", "Jobs=Aventurier", "Jobs=Architecte", "Jobs=Chasseur", "Jobs=Fermier", "Jobs=Mineur"
+    set {quete_lore::besoin::IX8::*} to 70
+    
+    set {quete_lore::lore::IX9::*} to " ", "&7Pour complêter ce challenge, vous devez", "&eavoir 2 900 000$ &7 sur votre compte", " ", "&7&nAstuce {@>>}" and "&7➞ faites &e/shop &7pour vendre vos resources."
+    set {quete_lore::recompense::IX9::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::IX9::*} to "Money"
+    set {quete_lore::besoin::IX9::*} to 2900000
+    
+    set {quete_lore::lore::IX10::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir passé &e15 jours connecté&7 sur le serveur."
+    set {quete_lore::recompense::IX10::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::IX10::*} to "Temps=de=jeu"
+    set {quete_lore::besoin::IX10::*} to 15
+    
+
+
+
+
+#PALIER 10 :
+
+    set {quete_lore::lore::X1::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7tondre &e10 000 moutons&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour avoir des moutons facilement, allez à &d&lAlféa&7%nl%  &7• &e/spawn -> portail à droite"
+    set {quete_lore::recompense::X1::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::X1::*} to "Tontes"
+    set {quete_lore::besoin::X1::*} to 10000
+    
+    set {quete_lore::lore::X2::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7tuer &e1000 vex&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir de l'exp grâce aux donjons, faites%nl%  &7• &e/donjon&7."
+    set {quete_lore::recompense::X2::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::X2::*} to "Mobs"
+    set {quete_lore::besoin::X2::*} to 1000
+
+    set {quete_lore::lore::X3::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7pêcher &e5000 items&7."
+    set {quete_lore::recompense::X3::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::X3::*} to "Items=pêchés"
+    set {quete_lore::besoin::X3::*} to 5000
+
+    set {quete_lore::lore::X4::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7placer &e1 000 000 blocs &7."
+    set {quete_lore::recompense::X4::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::X4::*} to "Blocs"
+    set {quete_lore::besoin::X4::*} to 1000000
+
+    set {quete_lore::lore::X5::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7infliger &e250 000 points de dégats&7.", " ", "&7&nAstuce {@>>}", "&7➞ Vous pouvez faire &e/donjon &7pour trouver des mobs à tuer." 
+    set {quete_lore::recompense::X5::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::X5::*} to "Dégâts"
+    set {quete_lore::besoin::X5::*} to 250000
+
+    set {quete_lore::lore::X6::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir une île de niveau &e100 000&7.", " ", "&7&nAstuce {@>>}", "&7➞ Pour calculer le niveau de votre île faites%nl%  &7• &f/is level" and "&7➞ Pour augmenter le niveau de votre île%nl%  &7vous devez poser des blocs sur votre île" 
+    set {quete_lore::recompense::X6::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::X6::*} to "ïle=Level"
+    set {quete_lore::besoin::X6::*} to 100000
+
+    set {quete_lore::lore::X7::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir &e300 Level d'xp&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir de l'exp grâce aux minerais, faites&7%nl%  &7• &e/mine &7ou &eminez à votre générateur" and "&7➞ Pour obtenir de l'exp grâce aux donjons, faites%nl%  &7• &e/donjon&7."
+    set {quete_lore::recompense::X7::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::X7::*} to "Level"
+    set {quete_lore::besoin::X7::*} to 300
+
+    set {quete_lore::lore::X8::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7Obtenir &e80 levels jobs&7 sur chacun des métiers.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour visualiser vos métiers, faites&7%nl%  &7• &e/jobs."
+    set {quete_lore::recompense::X8::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::X8::*} to "Jobs=Bûcheron", "Jobs=Pêcheur", "Jobs=Aventurier", "Jobs=Architecte", "Jobs=Chasseur", "Jobs=Fermier", "Jobs=Mineur"
+    set {quete_lore::besoin::X8::*} to 80
+    
+    set {quete_lore::lore::X9::*} to " ", "&7Pour complêter ce challenge, vous devez", "&eavoir 5 000 000$ &7 sur votre compte", " ", "&7&nAstuce {@>>}" and "&7➞ faites &e/shop &7pour vendre vos resources."
+    set {quete_lore::recompense::X9::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::X9::*} to "Money"
+    set {quete_lore::besoin::X9::*} to 5000000
+
+    set {quete_lore::lore::X10::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir passé &e20 jours connecté&7 sur le serveur."
+    set {quete_lore::recompense::X10::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::X10::*} to "Temps=de=jeu"
+    set {quete_lore::besoin::X10::*} to 20
+
+
+
+
+
+#PALIER 11 :
+
+    set {quete_lore::lore::XI1::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7placer &e10 000 Chorus Fruits&7."
+    set {quete_lore::recompense::XI1::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::XI1::*} to "Chorus=Fruits"
+    set {quete_lore::besoin::XI1::*} to 10000
+
+    set {quete_lore::lore::XI2::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7casser &e30 000 Cobblestones&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour casser de la cobblestone facilement, faites&7%nl%  &7• &e/mine &7ou &eminez à votre générateur"
+    set {quete_lore::recompense::XI2::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::XI2::*} to "Cobblestones"
+    set {quete_lore::besoin::XI2::*} to 30000
+
+    set {quete_lore::lore::XI3::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7récolter &e512 stacks&7 de &ePatates&7, &eCarottes&7, &eBetteraves&7," and "&ecitrouilles&7, &epastèques&7 et &eBlés&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir des cultures, faites&7%nl%  &7• &e/shop"
+    set {quete_lore::recompense::XI3::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::XI3::*} to "Pommes=de=terre","Carottes","Betteraves","Citrouilles","Pastèques","Blés"
+    set {quete_lore::besoin::XI3::*} to 32768
+
+    set {quete_lore::lore::XI4::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir &e500 Etherium&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir des Ethérium (ETH), faites%nl%  &7• &f/crypto"
+    set {quete_lore::recompense::XI4::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::XI4::*} to "Etherium"
+    set {quete_lore::besoin::XI4::*} to 500
+
+    set {quete_lore::lore::XI5::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7casser &e150 outils&7."
+    set {quete_lore::recompense::XI5::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::XI5::*} to "Cassés"
+    set {quete_lore::besoin::XI5::*} to 150
+
+    set {quete_lore::lore::XI6::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir une île de niveau &e150 000&7..", " ", "&7&nAstuce {@>>}", "&7➞ Pour calculer le niveau de votre île faites%nl%  &7• &f/is level" and "&7➞ Pour augmenter le niveau de votre île%nl%  &7vous devez poser des blocs sur votre île" 
+    set {quete_lore::recompense::XI6::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::XI6::*} to "ïle=Level"
+    set {quete_lore::besoin::XI6::*} to 150000
+
+    set {quete_lore::lore::XI7::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir &e400 Level d'xp&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir de l'exp grâce aux minerais, faites&7%nl%  &7• &e/mine &7ou &eminez à votre générateur" and "&7➞ Pour obtenir de l'exp grâce aux donjons, faites%nl%  &7• &e/donjon&7."
+    set {quete_lore::recompense::XI7::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::XI7::*} to "Level"
+    set {quete_lore::besoin::XI7::*} to 400
+
+    set {quete_lore::lore::XI8::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7Obtenir &e85 levels jobs&7 sur chacun des métiers.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour visualiser vos métiers, faites&7%nl%  &7• &e/jobs."
+    set {quete_lore::recompense::XI8::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::XI8::*} to "Jobs=Bûcheron", "Jobs=Pêcheur", "Jobs=Aventurier", "Jobs=Architecte", "Jobs=Chasseur", "Jobs=Fermier", "Jobs=Mineur"
+    set {quete_lore::besoin::XI8::*} to 85
+    
+    set {quete_lore::lore::XI9::*} to " ", "&7Pour complêter ce challenge, vous devez", "&eavoir 11 000 000$ &7 sur votre compte", " ", "&7&nAstuce {@>>}" and "&7➞ faites &e/shop &7pour vendre vos resources."
+    set {quete_lore::recompense::XI9::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::XI9::*} to "Money"
+    set {quete_lore::besoin::XI9::*} to 11000000
+
+    set {quete_lore::lore::XI10::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir passé &e25 jours connecté&7 sur le serveur."
+    set {quete_lore::recompense::XI10::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::XI10::*} to "Temps=de=jeu"
+    set {quete_lore::besoin::XI10::*} to 25
+
+
+
+
+
+
+#PALIER 12 :
+
+    set {quete_lore::lore::XII1::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7placer &e20 000 blocs de diamants&7."
+    set {quete_lore::recompense::XII1::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::XII1::*} to "Blocs"
+    set {quete_lore::besoin::XII1::*} to 20000
+    
+    set {quete_lore::lore::XII2::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7casser &e10 000 minerais d'émeraude&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour casser des minerais d'émeraudes facilement, faites&7" and "  &7• &e/mine &7ou &eminez à votre générateur"
+    set {quete_lore::recompense::XII2::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::XII2::*} to "Emeraudes"
+    set {quete_lore::besoin::XII2::*} to 10000
+
+    set {quete_lore::lore::XII3::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7enchanter &e200 outils&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour enchanter facilement des items, allez à &d&lAlféa&7%nl%  &7• &e/spawn -> portail à droite"
+    set {quete_lore::recompense::XII3::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::XII3::*} to "Enchantements"
+    set {quete_lore::besoin::XII3::*} to 200
+
+    set {quete_lore::lore::XII4::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7casser &e150 épées en diamants&7."
+    set {quete_lore::recompense::XII4::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::XII4::*} to "Cassés"
+    set {quete_lore::besoin::XII4::*} to 150
+
+    set {quete_lore::lore::XII5::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7crafter &e150 plastrons en diamants&7."
+    set {quete_lore::recompense::XII5::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::XII5::*} to "Crafts"
+    set {quete_lore::besoin::XII5::*} to 150
+
+    set {quete_lore::lore::XII6::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir une île de niveau &e200 000&7.", " ", "&7&nAstuce {@>>}", "&7➞ Pour calculer le niveau de votre île faites%nl%  &7• &f/is level" and "&7➞ Pour augmenter le niveau de votre île%nl%  &7vous devez poser des blocs sur votre île" 
+    set {quete_lore::recompense::XII6::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::XII6::*} to "ïle=Level"
+    set {quete_lore::besoin::XII6::*} to 200000
+
+    set {quete_lore::lore::XII7::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir &e500 Level d'xp&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir de l'exp grâce aux minerais, faites&7%nl%  &7• &e/mine &7ou &eminez à votre générateur" and "&7➞ Pour obtenir de l'exp grâce aux donjons, faites%nl%  &7• &e/donjon&7."
+    set {quete_lore::recompense::XII7::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::XII7::*} to "Level"
+    set {quete_lore::besoin::XII7::*} to 500
+
+    set {quete_lore::lore::XII8::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7Obtenir &e100 levels jobs&7 sur chacun des métiers.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour visualiser vos métiers, faites&7%nl%  &7• &e/jobs."
+    set {quete_lore::recompense::XII8::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::XII8::*} to "Jobs=Bûcheron", "Jobs=Pêcheur", "Jobs=Aventurier", "Jobs=Architecte", "Jobs=Chasseur", "Jobs=Fermier", "Jobs=Mineur"
+    set {quete_lore::besoin::XII8::*} to 100
+    
+    set {quete_lore::lore::XII9::*} to " ", "&7Pour complêter ce challenge, vous devez", "&eavoir 20 000 000$ &7 sur votre compte", " ", "&7&nAstuce {@>>}" and "&7➞ faites &e/shop &7pour vendre vos resources."
+    set {quete_lore::recompense::XII9::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::XII9::*} to "Money"
+    set {quete_lore::besoin::XII9::*} to 20000000
+
+    set {quete_lore::lore::XII10::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir passé &e35 jours connecté&7 sur le serveur."
+    set {quete_lore::recompense::XII10::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::XII10::*} to "Temps=de=jeu"
+    set {quete_lore::besoin::XII10::*} to 35
+
+
+
+
+
+#PALIER 13 :
+
+    set {quete_lore::lore::XIII1::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir &e1 gâteau&7 dans son inventaire."
+    set {quete_lore::recompense::XIII1::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::XIII1::*} to "Gâteau"
+    set {quete_lore::besoin::XIII1::*} to 1
+
+    set {quete_lore::lore::XIII2::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7fondre &e5 000 minerais d'émeraude&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour casser des minerais d'émeraudes facilement, faites&7%nl%  &7• &e/mine &7ou &eminez à votre générateur"
+    set {quete_lore::recompense::XIII2::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::XIII2::*} to "Fonte"
+    set {quete_lore::besoin::XIII2::*} to 5000
+
+    set {quete_lore::lore::XIII3::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7crafter &e200 outils&7."
+    set {quete_lore::recompense::XIII3::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::XIII3::*} to "Crafts"
+    set {quete_lore::besoin::XIII3::*} to 200
+
+    set {quete_lore::lore::XIII4::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7pêcher &e5000 poissons&7."
+    set {quete_lore::recompense::XIII4::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::XIII4::*} to "Pêche"
+    set {quete_lore::besoin::XIII4::*} to 5000
+
+    set {quete_lore::lore::XIII5::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7casser &e150 épée en netherite&7."
+    set {quete_lore::recompense::XIII5::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::XIII5::*} to "Cassés"
+    set {quete_lore::besoin::XIII5::*} to 150
+
+    set {quete_lore::lore::XIII6::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir une île de niveau &e300 000&7.", " ", "&7&nAstuce {@>>}", "&7➞ Pour calculer le niveau de votre île faites%nl%  &7• &f/is level" and "&7➞ Pour augmenter le niveau de votre île%nl%  &7vous devez poser des blocs sur votre île" 
+    set {quete_lore::recompense::XIII6::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::XIII6::*} to "ïle=Level"
+    set {quete_lore::besoin::XIII6::*} to 300000
+
+    set {quete_lore::lore::XIII7::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir &e1000 Level d'xp&7.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour obtenir de l'exp grâce aux minerais, faites&7%nl%  &7• &e/mine &7ou &eminez à votre générateur" and "&7➞ Pour obtenir de l'exp grâce aux donjons, faites%nl%  &7• &e/donjon&7."
+    set {quete_lore::recompense::XIII7::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::XIII7::*} to "Level"
+    set {quete_lore::besoin::XIII7::*} to 1000
+
+    set {quete_lore::lore::XIII8::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7Obtenir &e150 levels jobs&7 sur chacun des métiers.", " ", "&7&nAstuce {@>>}" and "&7➞ Pour visualiser vos métiers, faites&7%nl%  &7• &e/jobs."
+    set {quete_lore::recompense::XIII8::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::XIII8::*} to "Jobs=Bûcheron", "Jobs=Pêcheur", "Jobs=Aventurier", "Jobs=Architecte", "Jobs=Chasseur", "Jobs=Fermier", "Jobs=Mineur" 
+    set {quete_lore::besoin::XIII8::*} to 150
+    
+    set {quete_lore::lore::XIII9::*} to " ", "&7Pour complêter ce challenge, vous devez", "&eavoir 50 000 000$ &7 sur votre compte", " ", "&7&nAstuce {@>>}" and "&7➞ faites &e/shop &7pour vendre vos resources."
+    set {quete_lore::recompense::XIII9::*} to "&7• &e1 &7Clé &eQuête" 
+    set {quete_lore::listetasks::XIII9::*} to "Money"
+    set {quete_lore::besoin::XIII9::*} to 50000000
+
+    set {quete_lore::lore::XIII10::*} to " ", "&7Pour complêter ce challenge, vous devez", "&7avoir passé &e50 jours connecté&7 sur le serveur."
+    set {quete_lore::recompense::XIII10::*} to "&7• &e1 &7Clé &eQuête"
+    set {quete_lore::listetasks::XIII10::*} to "Temps=de=jeu"
+    set {quete_lore::besoin::XIII10::*} to 50

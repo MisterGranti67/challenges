@@ -1,0 +1,274 @@
+########################
+# Code par MrBaguette07#
+########################
+# Attention : 
+# - "" -> Prefix
+# - Créé pour Skylord
+
+on load:
+    send "&6&lDEV &7» &b&lLe skript &2&lquete - config.sk &b&l a bien démarré" to console
+
+options:
+    >>: »
+    p: &f &7»
+
+
+# Commande permettant d'accéder au menu des challenges
+command /quete [<integer= 1>] [<boolean=true>]:
+    aliases: /challenge, /challenges, /c
+    trigger:
+        if {quete_joueur::palier::%player%} is not set:
+            set {quete_joueur::palier::%player%} to 1
+        set {_arg-1} to arg-1
+        if arg-2 is true:
+            set {_check} to ceil({quete_joueur::palier::%player%}/5)
+            if {_check} != arg-1:
+                QuestOpenPalierMenu1(player, {_check})
+            else:
+                QuestOpenPalierMenu1(player, arg-1)
+        else:
+            QuestOpenPalierMenu1(player, arg-1)
+
+# évènement de connexion
+on join:
+    if {quete_joueur::palier::%player%} is not set:
+        set {quete_joueur::palier::%player%} to 1
+
+# Commande permettant de mettre à jour le palier d'un joueur
+command /mettreajourpalier [<offline player>] [<number>]:
+    permission: op
+    trigger:
+        set {quete_joueur::palier::%arg-1%} to arg-2
+
+
+function QuestOpenPalierMenu1(p: player, palier: integer):
+    # Placeholders de menus personnalisés
+    set {_texticone} to placeholder "img_generic5x9"
+    set {_offset} to placeholder "img_offset_-23"
+
+    set {_offset2} to placeholder "img_offset_-216"
+    set {_forgeron} to placeholder "img_challenge"
+    create a gui with virtual chest inventory with 5 rows named "&f%{_offset}%%{_texticone}%%{_offset2}%%{_forgeron}%" and shape "12--P--21", "2-------2", "--bcdef--", "2-------2", "12A-y-S21":
+        make gui "1" with air
+        make gui "2" with air
+        if {_palier} > 1:
+            set {_pp} to {_palier}
+            remove 1 from {_pp}
+            set {_icon} to customitem "skylord_gui:retour_menu"
+            make gui "A" with {_icon} named "&7Page précédente" with lore "&7Cliquez ici pour accéder aux", "&7paliers &e%{quete_listepalier::début::%{_pp}%}%&7 à&e %{quete_listepalier::fin::%{_pp}%}%":
+                close inventory of {_p}
+                make {_p} execute command "quete %{_pp}% false"
+        if {_palier} < size of {quete_listepalier::début::*}:
+            set {_ps} to {_palier}
+            add 1 to {_ps}
+            set {_icon} to customitem "skylord_gui:suivant_menu"
+            make gui "S" with {_icon} named "&7Page suivante" with lore "&7Cliquez ici pour accéder aux", "&7paliers &e%{quete_listepalier::début::%{_ps}%}%&7 à&e %{quete_listepalier::fin::%{_ps}%}%":
+                close inventory of {_p}
+                make {_p} execute command "quete %{_ps}% false"
+        set {_icon} to customitem "skylord_gui:fermer_menu"
+        make gui "y" with {_icon} named "&cFermer":
+            close inventory of {_p}
+        set {_s::*} to "b", "c", "d", "e" and "f"
+        set {_ss} to size of {quete_listepalier::liste::*}
+        loop {_ss} times:
+            if {quete_listepalier::liste::%loop-value%} is {quete_listepalier::début::%{_palier}%}:
+                set {_li} to loop-value
+                exit loop
+        loop {_s::*}:
+            if {_li} == 6:
+                if {_p} has permission "weight.6":
+                    set {_nombre} to ({_li}*0.0725)
+                    set {_nombre} to ({_nombre}+1)
+                    make console execute command "/shopgui addmodifier global %{_p}% %{_nombre}% sell"
+                    set {quete_modifier.%{_p}%} to 1
+            if {_li} == 11:
+                if {_p} has permission "weight.11":
+                    set {_nombre} to ({_li}*0.0725)
+                    set {_nombre} to ({_nombre}+1)
+                    make console execute command "/shopgui addmodifier global %{_p}% %{_nombre}% sell"
+                    set {quete_modifier.%{_p}%} to 1
+            if {_li} < {quete_joueur::palier::%{_p}%}:
+                set {_nombre} to ({_li}*0.0725)
+                set {_nombre} to ({_nombre}+1)
+                make console execute command "/shopgui addmodifier global %{_p}% %{_nombre}% sell"
+                set {quete_modifier.%{_p}%} to 1
+                make gui loop-value with book named "&8Palier &e%{quete_listepalier::liste::%{_li}%}%" with lore "&7Vous avez déjà fini ce palier." and "&e&lBOOST +7.25%%"
+            else if {_li} = {quete_joueur::palier::%{_p}%}:
+                set {_pactuel} to {_li}
+                if {quete_listepalier::liste::%{_li}%} is set:
+                    make gui loop-value with enchanted book named "&8Palier &e%{quete_listepalier::liste::%{_li}%}%" with lore "&7Cliquez pour accéder aux", "&7challenges de ce palier." and "&e&lBOOST +7.25%%":
+                        close inventory of {_p}
+                        QuestOpenPalier({_p}, {_pactuel})
+                else:
+                    make gui loop-value with barrier named "&8Palier &ePas encore disponible" with lore "&cVous n'avez pas encore débloqué", "&cce palier." and "&e&lBOOST +7.25%%"
+            else:
+                if {quete_listepalier::liste::%{_li}%} is set:
+                    make gui loop-value with barrier named "&8Palier &e%{quete_listepalier::liste::%{_li}%}%" with lore "&cVous n'avez pas encore débloqué", "&cce palier." and "&e&lBOOST +7.25%%"
+                else:
+                    make gui loop-value with barrier named "&8Palier &ePas encore disponible" with lore "&cVous n'avez pas encore débloqué", "&cce palier." and "&e&lBOOST +7.25%%"
+            add 1 to {_li}
+    open last gui to {_p}
+
+
+function QuestOpenPalier(p: player, palier: integer):
+    set {_palierx} to fontimage "skylord_icones:palier_%{_palier}%"
+    set {_texticone} to placeholder "img_generic6x9"
+    set {_offset} to placeholder "img_offset_-23"
+
+    set {_offset2} to placeholder "img_offset_-216"
+    set {_forgeron} to placeholder "img_challenge"
+    create a gui with virtual chest inventory with 6 rows named "&f%{_offset}%%{_texticone}%%{_offset2}%%{_forgeron}%" and shape "12--P--21", "2-------2", "--abcde--", "--fghij--", "2-------2", "12R!:--21":
+        make gui "1" with air
+        make gui "2" with air
+        set {_s::*} to "a", "b", "c", "d", "e", "f", "g", "h", "i" and "j"
+        set {quete_joueur::quete::actuel::%{_p}%::%{quete_listepalier::liste::%{_palier}%}%1} to true
+        set {_valide_total_off} to 0
+        set {_nombre_a_valider} to 0
+        loop 10 times:
+            set {_resultat_avance} to ""
+            set {_quete_avancee} to 0
+            set {_quete_avancee_off} to 0
+            set {_avancee} to placeholder "quests_quest:%{quete_listepalier::liste::%{_palier}%}%%loop-value-1%_completed" from {_p}
+            if {_avancee} contain "true":
+                set {quete_joueur::quete::valider::%{_p}%::%{quete_listepalier::liste::%{_palier}%}%%loop-value%} to true
+                send "&c%{quete_joueur::quete::valider::%{_p}%::%{quete_listepalier::liste::%{_palier}%}%%loop-value%}% %{quete_listepalier::liste::%{_palier}%}% %loop-value% %{_s}% %{_p}%" to console
+            if {quete_joueur::quete::valider::%{_p}%::%{quete_listepalier::liste::%{_palier}%}%%loop-value%} is set:
+                make gui {_s::%loop-value%} with empty map named "&7Challenge n°&e%loop-value%" with lore {quete_lore::lore::%{quete_listepalier::liste::%{_palier}%}%%loop-value%::*}, "", "&7&nRécompense(s) {@>>}", {quete_lore::recompense::%{quete_listepalier::liste::%{_palier}%}%%loop-value%::*}, " " and "&a✔ Challenge déjà validé &a✔"
+                add 1 to {_valide_total_off}
+
+            else:
+                add 1 to {_nombre_a_valider}
+                if {_nombre_a_valider} <= 2:
+                    if "%{quete_lore::besoin::%{quete_listepalier::liste::%{_palier}%}%%loop-value%::*}%" is "none":
+                        loop {quete_lore::besoin::%{quete_listepalier::liste::%{_palier}%}%%loop-value%::*}:
+                            set {_quete_avancee} to placeholder "quests_quest:%{quete_listepalier::liste::%{_palier}%}%%loop-value-1%_task:%loop-value-2%_progress" from {_p}
+
+                        set {_resultat_avance} to "&e%{_quete_avancee}%"
+                    else:
+                        if {_challenge_fait_1} is not set:
+                            set {_challenge_fait_1} to "%loop-value%"
+                        else if {_challenge_fait_2} is not set:
+                            set {_challenge_fait_2} to "%loop-value%"
+                        set {_resultat_avance} to "%{_quete_avancee}%"
+                        clear {_progression_unique_par_item::*}
+                        loop {quete_lore::listetasks::%{quete_listepalier::liste::%{_palier}%}%%loop-value%::*}:
+                            set {_quete_avancee} to placeholder "quests_quest:%{quete_listepalier::liste::%{_palier}%}%%loop-value-1%_task:%loop-value-2%_progress" from {_p}
+                            set {_id2} to "%{quete_lore::besoin::%{quete_listepalier::liste::%{_palier}%}%%loop-value-1%::*}%" parsed as number
+                            set {_loopvalueoff2} to loop-value-2
+                            replace all "=" with " " in {_loopvalueoff2}
+                            add "  &f%{_loopvalueoff2}% &7» &e%{_quete_avancee}%&7/%{_id2}%" to {_progression_unique_par_item::*}
+
+                            set {_quete_avancee} to {_quete_avancee} parsed as number
+                            if {_quete_avancee_off} is not set:
+                                set {_quete_avancee_off} to 0
+                            if {_quete_avancee} > {_id2}:
+                                set {_quete_avancee} to {_id2}
+                            add {_quete_avancee} to {_quete_avancee_off}
+
+                        set {_size} to size of {quete_lore::listetasks::%{quete_listepalier::liste::%{_palier}%}%%loop-value%::*}
+                        set {_id} to "%{quete_lore::besoin::%{quete_listepalier::liste::%{_palier}%}%%loop-value%::*}%" parsed as number
+                        set {_total} to ({_id}*{_size})
+
+                        set {_resultat_avance} to placeholder "progress_bar_%{_quete_avancee_off}%_c:&a|_p:&6|_r:&c|_l:29_m:%{_total}%_fullbar:&aTerminé !" from {_p}
+                        set {_leresul} to round((({_quete_avancee_off}/{_total})*100))
+                    make gui {_s::%loop-value%} with glowing paper named "&7Challenge n°&e%loop-value%" with lore {quete_lore::lore::%{quete_listepalier::liste::%{_palier}%}%%loop-value%::*}, "", "&7&nRécompense(s) {@>>}" and {quete_lore::recompense::%{quete_listepalier::liste::%{_palier}%}%%loop-value%::*}, "", "&7&nProgression {@>>}" and {_progression_unique_par_item::*} and "" and " &7⊰%{_resultat_avance}%&7⊱ &f~%{_leresul}%%%"
+                    set {_quete_startedounon} to placeholder "quests_quest:%{quete_listepalier::liste::%{_palier}%}%%loop-value%_started" from {_p}
+                    if "%{_quete_startedounon}%" contain "false":
+                        set {quete_joueur::quete::actuel::%{_p}%::%{quete_listepalier::liste::%{_palier}%}%%loop-value%} to true
+                        make console execute command "quests a moddata start %{_p}% %{quete_listepalier::liste::%{_palier}%}%%loop-value%"
+                    if {quete_joueur::quete::actuel::%{_p}%::%{quete_listepalier::liste::%{_palier}%}%%loop-value%} is false:
+                        set {quete_joueur::quete::actuel::%{_p}%::%{quete_listepalier::liste::%{_palier}%}%%loop-value%} to true
+                        make console execute command "quests a moddata start %{_p}% %{quete_listepalier::liste::%{_palier}%}%%loop-value%"
+                else:
+                    set {_quete_startedounon} to placeholder "quests_quest:%{quete_listepalier::liste::%{_palier}%}%%loop-value%_started" from {_p}
+                    if "%{_quete_startedounon}%" is "true":
+                        make {_p} execute command "quests cancel %{quete_listepalier::liste::%{_palier}%}%%loop-value%"
+                    make gui {_s::%loop-value%} with red stained glass pane named "&7Challenge n°&e%loop-value%" with lore {quete_lore::lore::%{quete_listepalier::liste::%{_palier}%}%%loop-value%::*}, "", "&7&nRécompense(s) {@>>}", {quete_lore::recompense::%{quete_listepalier::liste::%{_palier}%}%%loop-value%::*}, " " and "&c✖ Challenge &e%{_challenge_fait_1}% &cet &e%{_challenge_fait_2}%&c non validé. &c✖":
+                        send "&b&lSL &7» &fVous devez d'abord valider l'un des deux challenges précédents." to {_p}
+        if {_valide_total_off} >= 10:
+            add 1 to {quete_joueur::palier::%{_p}%}
+            send "&fVous avez validé le &ePalier %{quete_listepalier::liste::%{_palier}%}% &f!" to {_p}
+            make console execute command "/lp user %{_p}% parent add %{quete_listepalier::liste::%({_palier}+1)%}%"
+        set {_icon} to customitem "skylord_gui:retour_menu"
+        make gui "!" with {_icon} named "&c⬅ Retour":
+            close inventory of {_p}
+            make {_p} execute command "/quete"
+        set {_icon} to customitem "skylord_gui:fermer_menu"
+        make gui ":" with {_icon} named "&cFermer":
+            close inventory of {_p}
+    open the last gui to {_p}
+
+# Actualiser de force les challenges des joueurs
+# Arguments :
+#    - text : tous les challenges ou un challenge
+#    - offline player : pseudo du joueur
+command /adminactualiserchallenges [<text>] [<offline player>]:
+    permission: op
+    trigger:
+        if argument 1 is "all":
+            loop all players:
+                set {_nombre_a_valider} to 0
+                set {_palier} to ceil({quete_joueur::palier::%loop-player%}/5)
+                loop 10 times:
+                    set {_resultat_avance} to ""
+                    set {_quete_avancee} to 0
+                    set {_quete_avancee_off} to 0
+                    if {quete_joueur::quete::valider::%loop-player%::%{quete_listepalier::liste::%{_palier}%}%%loop-value-2%} is not set:
+                        add 1 to {_nombre_a_valider}
+                        if {_nombre_a_valider} > 2:
+                            set {_quete_startedounon} to placeholder "quests_quest:%{quete_listepalier::liste::%{_palier}%}%%loop-value-2%_started" from loop-player
+
+                            if "%{_quete_startedounon}%" is "true":
+                                make loop-player execute command "quests cancel %{quete_listepalier::liste::%{_palier}%}%%loop-value-2%"
+                            send "&cMrBaguette07 &7» &cNous sommes désolé pour l'annulation de ce challenge, nous avons optimisé nos challenges, et bloqué ceux-ci à deux (2) maximum à la fois au lieu de dix (10)." to loop-player
+                            send "annulation palier %{quete_listepalier::liste::%{_palier}%}%%loop-value-2% pour %loop-player%"
+                            send "annulation palier %{quete_listepalier::liste::%{_palier}%}%%loop-value-2% pour %loop-player%" to console
+                wait 5 ticks
+        else:
+            if argument 2 is set:
+                set {_palier} to ceil({quete_joueur::palier::%arg-2%}/5)
+                loop 10 times:
+                    set {_resultat_avance} to ""
+                    set {_quete_avancee} to 0
+                    set {_quete_avancee_off} to 0
+                    if {quete_joueur::quete::valider::%arg-2%::%{quete_listepalier::liste::%{_palier}%}%%loop-value%} is not set:
+                        add 1 to {_nombre_a_valider}
+                        if {_nombre_a_valider} > 2:
+                            set {_quete_startedounon} to placeholder "quests_quest:%{quete_listepalier::liste::%{_palier}%}%%loop-value%_started" from arg-2
+
+                            if "%{_quete_startedounon}%" is "true":
+                                make arg-2 execute command "quests cancel %{quete_listepalier::liste::%{_palier}%}%%loop-value%"
+                            send "&cMrBaguette07 &7» &cNous sommes désolé pour l'annulation de ce challenge, nous avons optimisé nos challenges, et bloqué ceux-ci à deux (2) maximum à la fois au lieu de dix (10)." to arg-2
+                            send "annulation palier %{quete_listepalier::liste::%{_palier}%}%%loop-value% pour %arg-2%"
+                            send "annulation palier %{quete_listepalier::liste::%{_palier}%}%%loop-value% pour %arg-2%" to console
+
+# Commande permettant de donner une clé à un joueur pour avoir fini un challenge
+# Arguments :
+#    - text : "Give"
+#    - offline player : pseudo du joueur
+#    - text : Nom du challenge (I, II, III...)
+#    - text : Nom du challenge et palier (I1, I2, II1, II2...)
+command /quetekey [<text>] [<offline player=%player%>] [<text>] [<text>]:
+    permission: op
+    trigger:
+        if arg-2 has permission "quete.premium":
+            chance of 50%:
+                make console execute command "crazycrate give physical quete 1 %arg-2%"
+        make console execute command "crazycrate give physical quete 1 %arg-2%"
+        send action bar "&b%arg-2% &fvient de valier le &a&lChallenge %arg-3%&f !" to all players
+        set {quete_joueur::quete::valider::%arg-2%::%arg-3%} to true
+        set {quete_joueur::quete::actuel::%arg-2%::%arg-4%} to false
+
+on command "/quests:quest" or "quest" or "q" or "q:q":
+    if player doesn't have permission "op":
+        cancel event
+        make player execute command "quete"
+
+on first join:
+    make player execute command "/jobs:jobs join Pecheur"
+    make player execute command "/jobs:jobs join Fermier"
+    make player execute command "/jobs:jobs join Miner"
+    make player execute command "/jobs:jobs join Builder"
+    make player execute command "/jobs:jobs join Aventurier"
+    make player execute command "/jobs:jobs join Chasseur"
+    make player execute command "/jobs:jobs join Bucheron"
