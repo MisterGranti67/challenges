@@ -1,0 +1,15 @@
+tasks:
+  Dégâts:
+    type: "dealdamage"
+    amount: 250000
+display:
+  name: "&a&nX - 5"
+rewards:
+  - "quetekey give {player} X5 X6"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

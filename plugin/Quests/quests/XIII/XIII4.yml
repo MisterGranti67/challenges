@@ -1,0 +1,16 @@
+tasks:
+  Pêche:
+    type: "fishing"
+    amount: 5000
+
+display:
+  name: "&a&nXIII - 4"
+rewards:
+  - "quetekey give {player} XIII4 XIII5"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

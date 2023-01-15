@@ -1,0 +1,16 @@
+tasks:
+  Morts:
+    type: "mobkilling"
+    amount: 1000
+    mob: IRON_GOLEM
+display:
+  name: "&a&nVIII - 4"
+rewards:
+  - "quetekey give {player} VIII4 VIII5"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

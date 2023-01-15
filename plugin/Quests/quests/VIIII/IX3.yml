@@ -1,0 +1,16 @@
+tasks:
+  Poissons:
+    type: "fishingcertain"
+    item: PUFFERFISH
+    amount: 150
+display:
+  name: "&a&nIX - 3"
+rewards:
+  - "quetekey give {player} IX3 IX4"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

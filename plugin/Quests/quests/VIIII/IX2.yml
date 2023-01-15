@@ -1,0 +1,16 @@
+tasks:
+  Selles:
+    type: "fishingcertain"
+    item: SADDLE
+    amount: 10
+display:
+  name: "&a&nIX - 2"
+rewards:
+  - "quetekey give {player} IX2 IX3"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

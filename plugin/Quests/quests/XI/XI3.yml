@@ -1,0 +1,44 @@
+tasks:
+  Pommes=de=terre:
+    type: "farming"
+    block: POTATOES
+    data: 7
+    amount: 36608
+    check-coreprotect: false
+  Carottes:
+    type: "farming"
+    block: CARROTS
+    data: 7
+    amount: 36608
+    check-coreprotect: false
+  Betteraves:
+    type: "farming"
+    block: BEETROOTS
+    amount: 36608
+    check-coreprotect: false
+  Citrouilles:
+    type: "blockbreakcertain"
+    block: PUMPKIN
+    amount: 36608
+    check-coreprotect: false
+  Pastèques:
+    type: "blockbreakcertain"
+    block: MELON
+    amount: 36608
+    check-coreprotect: false
+  Blés:
+    type: "farming"
+    block: WHEAT
+    amount: 36608
+    check-coreprotect: false
+display:
+  name: "&a&nXI - 3"
+rewards:
+  - "quetekey give {player} XI3 XI4"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

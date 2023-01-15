@@ -1,0 +1,16 @@
+tasks:
+  Blocs:
+    type: "blockplace"
+    amount: 120000
+    block: STONE_BRICKS
+display:
+  name: "&a&nVIII - 5"
+rewards:
+  - "quetekey give {player} VIII5 VIII6"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

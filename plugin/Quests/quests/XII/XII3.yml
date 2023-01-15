@@ -1,0 +1,15 @@
+tasks:
+  Enchantements:
+    type: "enchanting"
+    amount: 200
+display:
+  name: "&a&nXII - 3"
+rewards:
+  - "quetekey give {player} XII3 XII4"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

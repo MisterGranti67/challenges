@@ -1,0 +1,17 @@
+tasks:
+  Morts:
+    type: "mobkilling"
+    amount: 10                            # amount of mobs to be killed
+    mob: RAVAGER
+    name: &cRavageur de &8Carabosse
+display:
+  name: "&a&nVII - 1"
+rewards:
+  - "quetekey give {player} VII1 VII2"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

@@ -1,0 +1,18 @@
+tasks:
+  Cassés:
+    type: "placeholderapi_evaluate"
+    placeholder: "%statistic_break_item:netherite_sword%"
+    evaluates: "150"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+
+display:
+  name: "&a&nXIII - 5"
+rewards:
+  - "quetekey give {player} XIII5 XIII6"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

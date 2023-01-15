@@ -1,0 +1,16 @@
+tasks:
+  Chorus=Fruits:
+    type: "blockplace"
+    amount: 10
+    block: CHORUS_FLOWER
+display:
+  name: "&a&nXI - 1"
+rewards:
+  - "quetekey give {player} XI1 XI2"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

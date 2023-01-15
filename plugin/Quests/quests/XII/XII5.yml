@@ -1,0 +1,16 @@
+tasks:
+  Crafts:
+    type: "crafting"
+    item: DIAMOND_CHESTPLATE
+    amount: 150
+display:
+  name: "&a&nXII - 5"
+rewards:
+  - "quetekey give {player} XII5 XII6"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

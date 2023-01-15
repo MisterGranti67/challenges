@@ -1,0 +1,15 @@
+tasks:
+  Blocs:
+    type: "blockplace"
+    amount: 1000000
+display:
+  name: "&a&nX - 4"
+rewards:
+  - "quetekey give {player} X4 X5"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

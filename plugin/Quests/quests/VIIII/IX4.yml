@@ -1,0 +1,16 @@
+tasks:
+  Blocs:
+    type: "walking"
+    distance: 1000000
+    mode: walking
+display:
+  name: "&a&nIX - 4"
+rewards:
+  - "quetekey give {player} IX4 IX5"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

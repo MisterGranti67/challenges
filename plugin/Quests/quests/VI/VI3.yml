@@ -1,0 +1,40 @@
+tasks:
+  Gâteau:
+    type: "inventory"
+    item: CAKE
+    amount: 1
+    data: 0
+    remove-items-when-complete: false
+    allow-partial-completion: false
+  Torche:
+    type: "inventory"
+    item: TORCH
+    amount: 1
+    data: 0
+    remove-items-when-complete: false
+    allow-partial-completion: false
+  Coquelicot:
+    type: "inventory"
+    item: POPPY
+    amount: 1
+    data: 0
+    remove-items-when-complete: false
+    allow-partial-completion: false
+  Panneau:
+    type: "inventory"
+    item: OAK_SIGN
+    amount: 1
+    data: 0
+    remove-items-when-complete: false
+    allow-partial-completion: false
+display:
+  name: "&a&nVI - 3"
+rewards:
+  - "quetekey give {player} VI3 VI4"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

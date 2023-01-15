@@ -1,0 +1,15 @@
+tasks:
+  Morts:
+    type: "playerkilling"
+    amount: 50
+display:
+  name: "&a&nVIII - 1"
+rewards:
+  - "quetekey give {player} VIII1 VIII2"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

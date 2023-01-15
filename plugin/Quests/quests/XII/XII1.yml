@@ -1,0 +1,17 @@
+tasks:
+  Blocs:
+    type: "blockplace"
+    amount: 20000
+    block: DIAMOND_BLOCK
+    reverse-if-broken: false 
+display:
+  name: "&a&nXII - 1"
+rewards:
+  - "quetekey give {player} XII1 XII2"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

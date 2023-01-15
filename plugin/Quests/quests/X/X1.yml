@@ -1,0 +1,15 @@
+tasks:
+  Tontes:
+    type: "shearing"
+    amount: 10000
+display:
+  name: "&a&nX - 1"
+rewards:
+  - "quetekey give {player} X1 X2"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

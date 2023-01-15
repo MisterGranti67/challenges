@@ -1,0 +1,17 @@
+tasks:
+  Money:
+    type: "placeholderapi_evaluate"
+    placeholder: "%vault_eco_balance%"
+    evaluates: "50000000"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+display:
+  name: "&a&nXIII - 8"
+rewards:
+  - "quetekey give {player} XIII9 XIII10"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

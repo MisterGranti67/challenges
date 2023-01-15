@@ -1,0 +1,17 @@
+tasks:
+  ïle=Level:
+    type: "placeholderapi_evaluate"
+    placeholder: "%superior_island_level_int%"
+    evaluates: "15000"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+display:
+  name: "&a&nVII - 6"
+rewards:
+  - "quetekey give {player} VII6 VII7"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

@@ -1,0 +1,17 @@
+tasks:
+  Level:
+    type: "placeholderapi_evaluate"
+    placeholder: "%player_exp_to_level%"
+    evaluates: 300
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+display:
+  name: "&a&nX - 7"
+rewards:
+  - "quetekey give {player} X7 X8"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

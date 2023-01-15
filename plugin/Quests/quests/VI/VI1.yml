@@ -1,0 +1,19 @@
+tasks:
+  Obsidienne:
+    type: "blockbreak"
+    block: OBSIDIAN
+    amount: 150
+    data: 0
+    reverse-if-placed: false
+    check-coreprotect: false
+display:
+  name: "&a&nVI - 1"
+rewards:
+  - "quetekey give {player} VI1 VI2"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

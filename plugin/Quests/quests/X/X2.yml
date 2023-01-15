@@ -1,0 +1,16 @@
+tasks:
+  Mobs:
+    type: "mobkilling"
+    amount: 1000
+    mob: VEX
+display:
+  name: "&a&nX - 2"
+rewards:
+  - "quetekey give {player} X2 X3"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

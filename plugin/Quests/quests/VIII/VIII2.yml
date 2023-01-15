@@ -1,0 +1,36 @@
+tasks:
+  Casque=en=Netherite:
+    type: "inventory"
+    item: NETHERITE_HELMET
+    amount: 1
+    remove-items-when-complete: false
+    allow-partial-completion: false
+  Plastron=en=Netherite:
+    type: "inventory"
+    item: NETHERITE_CHESTPLATE
+    amount: 1
+    remove-items-when-complete: false
+    allow-partial-completion: false
+  Plantation=en=Netherite:
+    type: "inventory"
+    item: NETHERITE_LEGGINGS
+    amount: 1
+    remove-items-when-complete: false
+    allow-partial-completion: false
+  Bottes=en=Netherite:
+    type: "inventory"
+    item: NETHERITE_BOOTS
+    amount: 1
+    remove-items-when-complete: false
+    allow-partial-completion: false
+display:
+  name: "&a&nVIII - 2"
+rewards:
+  - "quetekey give {player} VIII2 VIII3"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

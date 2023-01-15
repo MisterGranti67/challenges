@@ -1,0 +1,16 @@
+tasks:
+  Blocs:
+    type: "walking"
+    distance: 10000
+    mode: walking
+display:
+  name: "&a&nVI - 5"
+rewards:
+  - "quetekey give {player} VI5 VI6"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

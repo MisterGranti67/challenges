@@ -1,0 +1,68 @@
+tasks:
+  Charbon:
+    type: "blockbreak"
+    block: 
+      - COAL_ORE
+    amount: 5000
+    data: 0
+    reverse-if-placed: false
+    check-coreprotect: false
+  Fer:
+    type: "blockbreak"
+    block: 
+      - IRON_ORE
+    amount: 5000
+    data: 0
+    reverse-if-placed: false
+    check-coreprotect: false
+  Or:
+    type: "blockbreak"
+    block: 
+      - GOLD_ORE
+    amount: 5000
+    data: 0
+    reverse-if-placed: false
+    check-coreprotect: false
+  Lapis:
+    type: "blockbreak"
+    block: 
+      - LAPIS_ORE
+    amount: 5000
+    data: 0
+    reverse-if-placed: false
+    check-coreprotect: false
+  Redstone:
+    type: "blockbreak"
+    block: 
+      - REDSTONE_ORE
+    amount: 5000
+    data: 0
+    reverse-if-placed: false
+    check-coreprotect: false
+  Emeraude:
+    type: "blockbreak"
+    block: 
+      - EMERALD_ORE
+    amount: 5000
+    data: 0
+    reverse-if-placed: false
+    check-coreprotect: false
+  Diamant:
+    type: "blockbreak"
+    block: 
+      - DIAMOND_ORE
+    amount: 5000
+    data: 0
+    reverse-if-placed: false
+    check-coreprotect: false
+display:
+  name: "&a&nVII - 4"
+rewards:
+  - "quetekey give {player} VII4 VII5"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

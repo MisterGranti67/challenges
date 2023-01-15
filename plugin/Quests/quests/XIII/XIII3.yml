@@ -1,0 +1,16 @@
+tasks:
+  Crafts:
+    type: "crafting"
+    item: NETHERITE_CHESTPLATE
+    amount: 150
+display:
+  name: "&a&nXIII - 3"
+rewards:
+  - "quetekey give {player} XIII3 XIII4"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

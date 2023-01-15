@@ -1,0 +1,20 @@
+tasks:
+  Cactus:
+    type: "inventory"
+    item: CACTUS
+    amount: 128000 #Un inv
+    data: 0
+    remove-items-when-complete: true
+    allow-partial-completion: true
+
+display:
+  name: "&a&nIX - 5"
+rewards:
+  - "quetekey give {player} IX5 IX6"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

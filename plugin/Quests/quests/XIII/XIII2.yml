@@ -1,0 +1,17 @@
+tasks:
+  Fonte:
+    type: "smeltingcertain"
+    amount: 5000
+    item: EMERALD_ORE
+
+display:
+  name: "&a&nXIII - 2"
+rewards:
+  - "quetekey give {player} XIII2 XIII3"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

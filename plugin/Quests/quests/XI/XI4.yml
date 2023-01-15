@@ -1,0 +1,17 @@
+tasks:
+  Etherium:
+    type: "placeholderapi_evaluate"
+    placeholder: "%crypto_ETHUSDT%"
+    evaluates: "500"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+display:
+  name: "&a&nXI - 4"
+rewards:
+  - "quetekey give {player} XI4 XI5"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

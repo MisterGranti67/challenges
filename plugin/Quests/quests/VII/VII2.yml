@@ -1,0 +1,15 @@
+tasks:
+  Reproduction:
+    type: "breeding"
+    amount: 3000
+display:
+  name: "&a&nVII - 2"
+rewards:
+  - "quetekey give {player} VII2 VII3"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

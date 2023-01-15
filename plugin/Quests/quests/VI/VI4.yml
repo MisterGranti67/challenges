@@ -1,0 +1,17 @@
+tasks:
+  Consommation:
+    type: "placeholderapi_evaluate"
+    placeholder: "%consommer_boissons%"
+    evaluates: "150"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+display:
+  name: "&a&nVI - 4"
+rewards:
+  - "quetekey give {player} VI4 VI5"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

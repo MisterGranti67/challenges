@@ -1,0 +1,15 @@
+tasks:
+  Items=pêchés:
+    type: "fishing"
+    amount: 5000
+display:
+  name: "&a&nX - 3"
+rewards:
+  - "quetekey give {player} X3 X4"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

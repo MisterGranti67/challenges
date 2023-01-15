@@ -1,0 +1,17 @@
+tasks:
+  Cassés:
+    type: "placeholderapi_evaluate"
+    placeholder: "%statistic_break_item:DIAMOND_SWORD%"
+    evaluates: "150"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+display:
+  name: "&a&nXII - 4"
+rewards:
+  - "quetekey give {player} XII4 XII5"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

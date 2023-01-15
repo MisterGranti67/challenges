@@ -1,0 +1,18 @@
+tasks:
+  Obsidiennes:
+    type: "blockbreak"
+    block: OBSIDIAN
+    amount: 1500
+    data: 0
+    reverse-if-placed: false
+display:
+  name: "&a&nIX - 1"
+rewards:
+  - "quetekey give {player} IX1 IX2"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1
