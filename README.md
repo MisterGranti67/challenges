@@ -51,6 +51,7 @@ Il permet de relier par une interface les quêtes créées avec le plugin [Quest
 ## **3 Comment l'utiliser ❔**
 
 ### 4.1 Lancer le programme ▶️
+Déplacé le dossier <sub>Quests/quests</sub>dans le dossier <sub>plugins</sub> de votre serveur Minecraft (Vous devez avoir le plugin Quests d'installé)<br>
 Déplacé le fichier <sub>config.sk</sub> et <sub>fichiers.sk</sub> dans le dossier <sub>plugins/Skript/scripts</sub><br>
 <sub>/skript reload config.sk</sub><br>
 <sub>/skript reload fichiers.sk</sub><br>
