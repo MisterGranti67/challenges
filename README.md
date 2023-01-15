@@ -30,22 +30,22 @@ Il permet de relier par une interface les quêtes créées avec le plugin [Quest
 
 > #### SK-GUI 🌌
 
-**_SK-GUI V1.3 BETA 1_** permet de créer des menus personnalisés sur Minecraft grâce à Skript.
+**_SK-GUI V1.3 BETA 1_** permet de créer des menus personnalisés sur Minecraft grâce à Skript.<br>
 <sub>Téléchargement : [https://github.com/APickledWalrus/skript-gui](https://github.com/APickledWalrus/skript-gui)</sub>
 
 > #### SK-GUI 🌌
 
-**_SkQuery 4.1.6_** Outils utilitaires de Skript permettant plusieurs fonctions indispensables 
+**_SkQuery 4.1.6_** Outils utilitaires de Skript permettant plusieurs fonctions indispensables <br>
 <sub>Téléchargement : [https://github.com/APickledWalrus/skript-gui](https://www.spigotmc.org/resources/skquery-1-13-1-19.36631/)</sub>
 
 > #### SK-GUI 🌌
 
-**_SK-GUI V1.3 BETA 1_** permet de créer des menus personnalisés sur Minecraft grâce à Skript.
+**_SK-GUI V1.3 BETA 1_** permet de créer des menus personnalisés sur Minecraft grâce à Skript.<br>
 <sub>Téléchargement : https://github.com/APickledWalrus/skript-gui</sub>
 
 > #### SK-GUI 🌌
 
-**_Quests LATEST_** permet de créer des quêtes sur Minecraft
+**_Quests LATEST_** permet de créer des quêtes sur Minecraft<br>
 <sub>Téléchargement : [https://github.com/LMBishop/Quests](https://github.com/LMBishop/Quests)</sub>
 
 ## **3 Comment l'utiliser ❔**
