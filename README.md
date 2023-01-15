@@ -1,7 +1,7 @@
 # **Challenges avec Skript**
 
-> Auteur : MrBaguette07
-> SERVEUR : PLAY.SKYLORD.FR | PLAY.SKYBLOCK.FR
+> Auteur : MrBaguette07<br>
+> **Serveur : PLAY.SKYLORD.FR | PLAY.SKYBLOCK.FR**
 
 # **Sommaire 📃**
 
