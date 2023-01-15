@@ -51,9 +51,9 @@ Il permet de relier par une interface les quêtes créées avec le plugin [Quest
 ## **3 Comment l'utiliser ❔**
 
 ### 4.1 Lancer le programme ▶️
-Déplacé le fichier <sub>config.sk</sub> et <sub>fichiers.sk</sub> dans le dossier <sub>plugins/Skript/scripts</sub>
-<sub>/skript reload config.sk</sub>
-<sub>/skript reload fichiers.sk</sub>
-
+Déplacé le fichier <sub>config.sk</sub> et <sub>fichiers.sk</sub> dans le dossier <sub>plugins/Skript/scripts</sub><br>
+<sub>/skript reload config.sk</sub><br>
+<sub>/skript reload fichiers.sk</sub><br>
+<br>
 Faites ensuite la commande <sub>/c</sub> pour ouvrir l'interface
 
