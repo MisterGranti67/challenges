@@ -1,0 +1,16 @@
+tasks:
+  Morts:
+    type: "mobkilling"
+    amount: 50
+    mob: SKELETON
+display:
+  name: "&a&nIII - 5"
+rewards:
+  - "quetekey give {player} III5 III6"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

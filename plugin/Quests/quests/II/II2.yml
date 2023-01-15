@@ -1,0 +1,19 @@
+tasks:
+  Terres:
+    type: "inventory"
+    item: DIRT
+    amount: 64
+    data: 0
+    remove-items-when-complete: false
+    allow-partial-completion: false
+display:
+  name: "&a&nII - 2"
+rewards:
+  - "quetekey give {player} II2 II3"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

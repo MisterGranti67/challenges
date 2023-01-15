@@ -1,0 +1,15 @@
+tasks:
+  Morts:
+    type: "playerkilling"
+    amount: 20
+display:
+  name: "&a&nV - 5"
+rewards:
+  - "quetekey give {player} V5 V6"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

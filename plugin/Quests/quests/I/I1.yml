@@ -1,0 +1,19 @@
+tasks:
+  Ile:
+    type: "placeholderapi_evaluate"
+    placeholder: "%superior_island_level_int%"
+    evaluates: "-10000"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+display:
+  name: "&a&nI - 1"
+lore-started:
+  - "&6Vous avez commencé cette quête."
+rewards:
+  - "quetekey give {player} I1 I2"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

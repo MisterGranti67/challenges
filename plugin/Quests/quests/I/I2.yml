@@ -1,0 +1,19 @@
+tasks:
+  Cobblestones:
+    type: "inventory"
+    item: COBBLESTONE
+    amount: 64
+    data: 0
+    remove-items-when-complete: false
+    allow-partial-completion: false
+display:
+  name: "&a&nI - 2"
+rewards:
+  - "quetekey give {player} I2 I3"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

@@ -1,0 +1,73 @@
+tasks:
+  Jobs=Bûcheron:
+    type: "placeholderapi_evaluate"
+    placeholder: "%jobsr_user_jlevel_Bucheron%"
+    evaluates: "10"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+  Jobs=Pêcheur:
+    type: "placeholderapi_evaluate"
+    placeholder: "%jobsr_user_jlevel_Pecheur%"
+    evaluates: "10"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+  Jobs=Aventurier:
+    type: "placeholderapi_evaluate"
+    placeholder: "%jobsr_user_jlevel_Aventurier%"
+    evaluates: "10"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+  Jobs=Architecte:
+    type: "placeholderapi_evaluate"
+    placeholder: "%jobsr_user_jlevel_Architecte%"
+    evaluates: "10"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+  Jobs=Chasseur:
+    type: "placeholderapi_evaluate"
+    placeholder: "%jobsr_user_jlevel_Chasseur%"
+    evaluates: "10"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+  Jobs=Fermier:
+    type: "placeholderapi_evaluate"
+    placeholder: "%jobsr_user_jlevel_Fermier%"
+    evaluates: "10"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+  Jobs=Mineur:
+    type: "placeholderapi_evaluate"
+    placeholder: "%jobsr_user_jlevel_Mineur%"
+    evaluates: "10"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+# tasks:
+#   Jobs=Bûcheron:
+#     type: "placeholderapi_evaluate"
+#     placeholder: "%jobsr_user_jlevel_Aventurier%"
+#     evaluates: "10"
+#     operator: "GREATER_THAN_OR_EQUAL_TO"
+#   Jobs=Pêcheur:
+#     type: "permission"
+#     permission: "jobs.Pecheur.palier2"
+#   Jobs=Aventurier:
+#     type: "permission"
+#     permission: "jobs.Aventurier.palier2"
+#   Jobs=Architecte:
+#     type: "permission"
+#     permission: "jobs.Architecte.palier2"
+#   Jobs=Chasseur:
+#     type: "permission"
+#     permission: "jobs.Chasseur.palier2"
+#   Jobs=Fermier:
+#     type: "placeholderapi_evaluate"
+#     placeholder: "%luckperms_has_jobsr_user_jlevel_Aventurier%"
+#     evaluates: "10"
+#     operator: "GREATER_THAN_OR_EQUAL_TO"
+#   Jobs=Mineur:
+#     type: "permission"
+#     permission: "jobs.Mineur.palier2"
+display:
+  name: "&a&nII - 8"
+rewards:
+  - "quetekey give {player} II8 II9"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

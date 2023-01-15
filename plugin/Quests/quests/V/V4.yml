@@ -1,0 +1,19 @@
+tasks:
+  Balises:
+    type: "inventory"
+    item: BEACON
+    amount: 4
+    data: 0
+    remove-items-when-complete: false
+    allow-partial-completion: false
+display:
+  name: "&a&nV - 4"
+rewards:
+  - "quetekey give {player} V4 V5"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

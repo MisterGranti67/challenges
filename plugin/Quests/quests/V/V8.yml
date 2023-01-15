@@ -1,0 +1,47 @@
+tasks:
+  Jobs=Bûcheron:
+    type: "placeholderapi_evaluate"
+    placeholder: "%jobsr_user_jlevel_Bucheron%"
+    evaluates: "30"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+  Jobs=Pêcheur:
+    type: "placeholderapi_evaluate"
+    placeholder: "%jobsr_user_jlevel_Pecheur%"
+    evaluates: "30"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+  Jobs=Aventurier:
+    type: "placeholderapi_evaluate"
+    placeholder: "%jobsr_user_jlevel_Aventurier%"
+    evaluates: "30"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+  Jobs=Architecte:
+    type: "placeholderapi_evaluate"
+    placeholder: "%jobsr_user_jlevel_Architecte%"
+    evaluates: "30"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+  Jobs=Chasseur:
+    type: "placeholderapi_evaluate"
+    placeholder: "%jobsr_user_jlevel_Chasseur%"
+    evaluates: "30"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+  Jobs=Fermier:
+    type: "placeholderapi_evaluate"
+    placeholder: "%jobsr_user_jlevel_Fermier%"
+    evaluates: "30"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+  Jobs=Mineur:
+    type: "placeholderapi_evaluate"
+    placeholder: "%jobsr_user_jlevel_Mineur%"
+    evaluates: "30"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+display:
+  name: "&a&nV - 8"
+rewards:
+  - "quetekey give {player} V8 V9"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

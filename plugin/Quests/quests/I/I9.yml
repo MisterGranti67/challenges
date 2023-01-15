@@ -1,0 +1,17 @@
+tasks:
+  Total=votes:
+    type: "placeholderapi_evaluate"
+    placeholder: "%votes_joueur%"
+    evaluates: "2"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+display:
+  name: "&a&nI - 9"
+rewards:
+  - "quetekey give {player} I9 I10"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

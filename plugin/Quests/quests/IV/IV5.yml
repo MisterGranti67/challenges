@@ -1,0 +1,15 @@
+tasks:
+  Dégâts:
+    type: "dealdamage"
+    amount: 1000
+display:
+  name: "&a&nIV - 5"
+rewards:
+  - "quetekey give {player} IV5 IV6"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

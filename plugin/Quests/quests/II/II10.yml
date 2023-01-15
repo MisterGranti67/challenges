@@ -1,0 +1,17 @@
+tasks:
+  Temps=de=jeu:
+    type: "placeholderapi_evaluate"
+    placeholder: "%statistic_hours_played%"
+    evaluates: "3"
+    operator: "GREATER_THAN_OR_EQUAL_TO"   
+display:
+  name: "&a&nII - 10"
+rewards:
+  - "quetekey give {player} II10 III1"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

@@ -1,0 +1,16 @@
+tasks:
+  Morts:
+    type: "mobkilling"
+    amount: 20
+    hostile: true
+display:
+  name: "&a&nII - 5"
+rewards:
+  - "quetekey give {player} II5 II6"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

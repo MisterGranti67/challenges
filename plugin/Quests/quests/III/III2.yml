@@ -1,0 +1,18 @@
+tasks:
+  Cobblestones:
+    type: "blockbreak"
+    block: COBBLESTONE
+    amount: 1000
+    reverse-if-placed: false
+    check-coreprotect: false
+display:
+  name: "&a&nIII - 2"
+rewards:
+  - "quetekey give {player} III2 III3"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

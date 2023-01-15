@@ -1,0 +1,16 @@
+tasks:
+  Seaux=de=lait:
+    type: "bucketfill"
+    bucket: MILK_BUCKET
+    amount: 150
+display:
+  name: "&a&nIV - 3"
+rewards:
+  - "quetekey give {player} IV3 IV4"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

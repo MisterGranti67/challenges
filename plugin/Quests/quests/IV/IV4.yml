@@ -1,0 +1,16 @@
+tasks:
+  Pommes=en=or:
+    type: "consume"
+    item: GOLDEN_APPLE
+    amount: 16
+display:
+  name: "&a&nIV - 4"
+rewards:
+  - "quetekey give {player} IV4 IV5"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

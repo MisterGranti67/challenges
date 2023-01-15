@@ -1,0 +1,17 @@
+tasks:
+  Level:
+    type: "placeholderapi_evaluate"
+    placeholder: "%player_exp_to_level%"
+    evaluates: "50"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+display:
+  name: "&a&nIV - 7"
+rewards:
+  - "quetekey give {player} IV7 IV8"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

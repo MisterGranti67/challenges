@@ -1,0 +1,28 @@
+tasks:
+  Moutons:
+    type: "mobkillingcertain"
+    amount: 10
+    mob: SHEEP 
+  Cochons:
+    type: "mobkillingcertain"
+    amount: 10
+    mob: PIG 
+  Vaches:
+    type: "mobkillingcertain"
+    amount: 10
+    mob: COW 
+  Poules:
+    type: "mobkillingcertain"
+    amount: 10
+    mob: CHICKEN 
+display:
+  name: "&a&nI - 4"
+rewards:
+  - "quetekey give {player} I4 I5"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

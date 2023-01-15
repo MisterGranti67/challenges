@@ -1,0 +1,17 @@
+tasks:
+  Terres:
+    type: "blockplace"
+    amount: 1000
+    block: DIRT
+    reverse-if-broken: false 
+display:
+  name: "&a&nIII - 3"
+rewards:
+  - "quetekey give {player} III3 III4"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

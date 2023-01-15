@@ -1,0 +1,17 @@
+tasks:
+  Cassés:
+    type: "placeholderapi_evaluate"
+    placeholder: "%statistic_break_item%"
+    evaluates: "50"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+display:
+  name: "&a&nV - 3"
+rewards:
+  - "quetekey give {player} V3 V4"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

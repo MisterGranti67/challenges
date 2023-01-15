@@ -1,0 +1,15 @@
+tasks:
+  Enchantements:
+    type: "enchanting"
+    amount: 50
+display:
+  name: "&a&nV - 1"
+rewards:
+  - "quetekey give {player} V1 V2"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

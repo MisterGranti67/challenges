@@ -1,0 +1,17 @@
+tasks:
+  Epée=en=Diamant:
+    type: "crafting"
+    item: DIAMOND_SWORD
+    amount: 3
+    data: 0
+display:
+  name: "&a&nIII - 1"
+rewards:
+  - "quetekey give {player} III1 III2"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

@@ -1,0 +1,47 @@
+tasks:
+  Epée=en=Diamant:
+    type: "inventory"
+    item: DIAMOND_SWORD
+    amount: 1
+    data: 0
+    remove-items-when-complete: false
+    allow-partial-completion: false
+  Pelle=en=Diamant:
+    type: "inventory"
+    item: DIAMOND_SHOVEL
+    amount: 1
+    data: 0
+    remove-items-when-complete: false
+    allow-partial-completion: false
+  Pioche=en=Diamant:
+    type: "inventory"
+    item: DIAMOND_PICKAXE
+    amount: 1
+    data: 0
+    remove-items-when-complete: false
+    allow-partial-completion: false
+  Hâche=en=Diamant:
+    type: "inventory"
+    item: DIAMOND_AXE
+    amount: 1
+    data: 0
+    remove-items-when-complete: false
+    allow-partial-completion: false
+  Houe=en=Diamant:
+    type: "inventory"
+    item: DIAMOND_HOE
+    amount: 1
+    data: 0
+    remove-items-when-complete: false
+    allow-partial-completion: false
+display:
+  name: "&a&nII - 1"
+rewards:
+  - "quetekey give {player} II1 II2"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

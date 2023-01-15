@@ -1,0 +1,15 @@
+tasks:
+  Apprivoiser:
+    type: "taming"
+    amount: 25
+display:
+  name: "&a&nIV - 1"
+rewards:
+  - "quetekey give {player} IV1 IV2"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

@@ -1,0 +1,69 @@
+tasks:
+  Jobs=Bûcheron:
+    type: "placeholderapi_evaluate"
+    placeholder: "%jobsr_user_jlevel_Bucheron%"
+    evaluates: "5"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+  Jobs=Pêcheur:
+    type: "placeholderapi_evaluate"
+    placeholder: "%jobsr_user_jlevel_Pecheur%"
+    evaluates: "5"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+  Jobs=Aventurier:
+    type: "placeholderapi_evaluate"
+    placeholder: "%jobsr_user_jlevel_Aventurier%"
+    evaluates: "5"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+  Jobs=Architecte:
+    type: "placeholderapi_evaluate"
+    placeholder: "%jobsr_user_jlevel_Builder%"
+    evaluates: "5"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+  Jobs=Chasseur:
+    type: "placeholderapi_evaluate"
+    placeholder: "%jobsr_user_jlevel_Chasseur%"
+    evaluates: "5"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+  Jobs=Fermier:
+    type: "placeholderapi_evaluate"
+    placeholder: "%jobsr_user_jlevel_Fermier%"
+    evaluates: "5"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+  Jobs=Mineur:
+    type: "placeholderapi_evaluate"
+    placeholder: "%jobsr_user_jlevel_Mineur%"
+    evaluates: "5"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+# tasks:
+#   Jobs=Bûcheron:
+#     type: "permission"
+#     permission: "jobs.Bucheron.palier1"
+#   Jobs=Pêcheur:
+#     type: "permission"
+#     permission: "jobs.Pecheur.palier1"
+#   Jobs=Aventurier:
+#     type: "permission"
+#     permission: "jobs.Aventurier.palier1"
+#   Jobs=Architecte:
+#     type: "permission"
+#     permission: "jobs.Architecte.palier1"
+#   Jobs=Chasseur:
+#     type: "permission"
+#     permission: "jobs.Chasseur.palier1"
+#   Jobs=Fermier:
+#     type: "permission"
+#     permission: "jobs.Fermier.palier1"
+#   Jobs=Mineur:
+#     type: "permission"
+#     permission: "jobs.Mineur.palier1"
+display:
+  name: "&a&nI - 8"
+rewards:
+  - "quetekey give {player} I8 I9"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

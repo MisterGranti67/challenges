@@ -1,0 +1,18 @@
+tasks:
+  Money:
+    type: "placeholderapi_evaluate"
+    placeholder: "%vault_eco_balance%"
+    evaluates: "100000"
+    operator: "GREATER_THAN_OR_EQUAL_TO"
+display:
+  name: "&a&nV - 9"
+rewards:
+  - "quetekey give {player} V9 V10"
+  - "money take {player} 100000"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

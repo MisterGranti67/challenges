@@ -1,0 +1,40 @@
+tasks:
+  Casque=en=Diamant:
+    type: "inventory"
+    item: DIAMOND_HELMET
+    amount: 1
+    data: 0
+    remove-items-when-complete: false
+    allow-partial-completion: false
+  Plastron=en=Diamant:
+    type: "inventory"
+    item: DIAMOND_CHESTPLATE
+    amount: 1
+    data: 0
+    remove-items-when-complete: false
+    allow-partial-completion: false
+  Pantalon=en=Diamant:
+    type: "inventory"
+    item: DIAMOND_LEGGINGS
+    amount: 1
+    data: 0
+    remove-items-when-complete: false
+    allow-partial-completion: false
+  Chaussure=en=Diamant:
+    type: "inventory"
+    item: DIAMOND_BOOTS
+    amount: 1
+    data: 0
+    remove-items-when-complete: false
+    allow-partial-completion: false
+display:
+  name: "&a&nI - 6"
+rewards:
+  - "quetekey give {player} I6 I7"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

@@ -1,0 +1,15 @@
+tasks:
+  Potions:
+    type: "brewing"
+    amount: 50
+display:
+  name: "&a&nIV - 2"
+rewards:
+  - "quetekey give {player} IV2 IV3"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1

@@ -1,0 +1,47 @@
+tasks:
+  Hache=en=Pierre:
+    type: "inventory"
+    item: STONE_AXE
+    amount: 1
+    data: 0
+    remove-items-when-complete: false
+    allow-partial-completion: false
+  Pelle=en=Pierre:
+    type: "inventory"
+    item: STONE_SHOVEL
+    amount: 1
+    data: 0
+    remove-items-when-complete: false
+    allow-partial-completion: false
+  Pioche=en=Pierre:
+    type: "inventory"
+    item: STONE_PICKAXE
+    amount: 1
+    data: 0
+    remove-items-when-complete: false
+    allow-partial-completion: false
+  Epée=en=Pierre:
+    type: "inventory"
+    item: STONE_SWORD
+    amount: 1
+    data: 0
+    remove-items-when-complete: false
+    allow-partial-completion: false
+  Houe=en=Pierre:
+    type: "inventory"
+    item: STONE_HOE
+    amount: 1
+    data: 0
+    remove-items-when-complete: false
+    allow-partial-completion: false
+display:
+  name: "&a&nI - 3"
+rewards:
+  - "quetekey give {player} I3 I4"
+options:
+  requires: []
+  repeatable: false
+  cooldown:
+    enabled: false
+    time: 2880
+  sort-order: 1
