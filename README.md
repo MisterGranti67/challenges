@@ -35,7 +35,7 @@ Il permet de relier par une interface les quêtes créées avec le plugin [Quest
 
 > #### SK-GUI 🌌
 
-**_SkQuery 4.1.6_**
+**_SkQuery 4.1.6_** Outils utilitaires de Skript permettant plusieurs fonctions indispensables 
 <sub>Téléchargement : [https://github.com/APickledWalrus/skript-gui](https://www.spigotmc.org/resources/skquery-1-13-1-19.36631/)</sub>
 
 > #### SK-GUI 🌌
