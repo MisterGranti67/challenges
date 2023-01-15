@@ -1,6 +1,6 @@
 # **Challenges avec Skript**
 
-> Auteur : ELUECQUE Anthony & DOURNEL Frédéric
+> Auteur : MrBaguette07
 
 # **Sommaire 📃**
 
